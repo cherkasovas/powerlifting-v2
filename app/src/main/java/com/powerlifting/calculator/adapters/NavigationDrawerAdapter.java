@@ -43,7 +43,7 @@ public class NavigationDrawerAdapter extends BaseAdapter {
         View menuItem = inflater.inflate(R.layout.navigation_drawer_menu_item, null);
         ImageView menuIcon = (ImageView) menuItem.findViewById(R.id.menu_icon);
         TextView menuTitle = (TextView) menuItem.findViewById(R.id.menu_title);
-        menuIcon.setImageResource(icons.getResourceId(position, R.id.none));
+        menuIcon.setBackgroundResource(icons.getResourceId(position, R.id.none));
         menuTitle.setText(titles[position]);
         return menuItem;
     }
