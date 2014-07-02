@@ -1,12 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
+    <LinearLayout
+        android:id="@+id/calc_control"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="asd"/>
+        android:layout_centerHorizontal="true">
 
-</LinearLayout>
+        <EditText
+            android:id="@+id/entered_weight"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@android:color/black" />
+
+        <Spinner
+            android:id="@+id/entered_reps"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:spinnerMode="dropdown"
+            android:layout_gravity="center_horizontal" />
+
+        <Button
+            android:id="@+id/calculate"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/calc" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/calc_control"
+        android:layout_above="@+id/ratio_group">
+
+        <TableLayout
+            android:id="@+id/weight_breakdown"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </TableLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/ratio_group"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</RelativeLayout>
