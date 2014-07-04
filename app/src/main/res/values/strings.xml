@@ -13,5 +13,8 @@
     <string name="your_weight">Your weight</string>
     <string name="maximum">Maximum</string>
     <string name="calc">Calc</string>
+    <string name="reps">Reps</string>
+    <string name="weight">Weight</string>
+    <string name="percent">%</string>
 
 </resources>

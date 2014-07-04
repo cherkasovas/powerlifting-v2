@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <LinearLayout
@@ -15,7 +16,7 @@
             android:layout_width="80dp"
             android:layout_height="40dp"
             android:layout_gravity="center_horizontal"
-            android:background="@android:color/black" />
+            android:background="@drawable/rounded_edittext" />
 
         <Spinner
             android:id="@+id/entered_reps"
@@ -37,12 +38,33 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/calc_control"
-        android:layout_above="@+id/ratio_group">
+        android:layout_above="@+id/ratio_group"
+        android:scrollbars="none">
 
         <TableLayout
             android:id="@+id/weight_breakdown"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@android:color/black">
+
+            <TableRow android:id="@+id/weight_breakdown_header"
+                android:visibility="gone"
+                android:layout_marginTop="0.5dp">
+
+                <TextView
+                    style="@style/Main"
+                    android:layout_marginLeft="0.5dp"
+                    android:text="@string/reps" />
+
+                <TextView
+                    style="@style/Main"
+                    android:text="@string/weight" />
+
+                <TextView
+                    style="@style/Main"
+                    android:text="@string/percent" />
+
+            </TableRow>
 
         </TableLayout>
 

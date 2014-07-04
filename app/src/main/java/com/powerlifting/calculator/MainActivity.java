@@ -1,6 +1,5 @@
 package com.powerlifting.calculator;
 
-import android.content.res.Configuration;
 import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
@@ -8,7 +7,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -21,7 +19,7 @@ import com.powerlifting.calculator.adapters.NavigationDrawerAdapter;
 public class MainActivity extends ActionBarActivity {
     private ListView mNavigationDrawerMenu;
     private DrawerLayout mDrawerLayout;
-    private ActionBarDrawerToggle myDrawerToggle;
+    private ActionBarDrawerToggle mDrawerToggle;
 
     private AdapterView.OnItemClickListener mMenuClickListener = new AdapterView.OnItemClickListener() {
         @Override
@@ -47,25 +45,24 @@ public class MainActivity extends ActionBarActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        myDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout,
+        mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout,
                 R.drawable.ic_drawer, R.string.app_name, R.string.app_name) {
             public void onDrawerClosed(View view) {
-                getSupportActionBar().setTitle("хуй");
+//                getSupportActionBar().setTitle("хуй");
                 supportInvalidateOptionsMenu();
             }
 
             public void onDrawerOpened(View drawerView) {
-                getSupportActionBar().setTitle("hooe");
                 supportInvalidateOptionsMenu();
             }
         };
 
-        mDrawerLayout.setDrawerListener(myDrawerToggle);
+        mDrawerLayout.setDrawerListener(mDrawerToggle);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (myDrawerToggle.onOptionsItemSelected(item)) {
+        if (mDrawerToggle.onOptionsItemSelected(item)) {
             return true;
         } else {
             return super.onOptionsItemSelected(item);
@@ -75,7 +72,7 @@ public class MainActivity extends ActionBarActivity {
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
-        myDrawerToggle.syncState();
+        mDrawerToggle.syncState();
     }
 
     private void setFragment(int position) {
