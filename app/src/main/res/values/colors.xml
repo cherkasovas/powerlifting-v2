@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="orange_status_bar">#ff5722</color>
+    <color name="shadow_table">#bbb</color>
+    <color name="table_border_color">#555</color>
+    <color name="table_row_color_odd">#ffccbc</color>
+
+</resources>

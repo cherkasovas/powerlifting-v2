@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp">
+
+    <LinearLayout
+        android:id="@+id/table_header"
+        android:layout_width="match_parent"
+        android:background="@color/table_border_color"
+        android:layout_height="51dp">
+
+        <TextView
+            style="@style/Main"
+            android:layout_marginLeft="@dimen/table_border_width"
+            android:layout_marginTop="@dimen/table_border_width"
+            android:text="@string/reps" />
+
+        <TextView
+            style="@style/Main"
+            android:layout_marginTop="@dimen/table_border_width"
+            android:text="@string/weight" />
+
+        <TextView
+            style="@style/Main"
+            android:layout_marginTop="@dimen/table_border_width"
+            android:text="@string/percent" />
+
+    </LinearLayout>
+
+    <uk.co.androidalliance.edgeeffectoverride.EdgeEffectListView
+        android:id="@+id/list_view"
+        android:divider="@null"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        app:edgeeffect_color="@color/orange_status_bar"
+        android:background="@color/shadow_table">
+
+    </uk.co.androidalliance.edgeeffectoverride.EdgeEffectListView>
+
+</LinearLayout>

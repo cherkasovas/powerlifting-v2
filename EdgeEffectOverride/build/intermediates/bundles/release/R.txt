@@ -1,0 +1,6 @@
+int attr edgeeffect_color 0x7f010000
+int color default_edgeeffect_color 0x7f030000
+int drawable overscroll_edge 0x7f020000
+int drawable overscroll_glow 0x7f020001
+int[] styleable EdgeEffectView { 0x7f010000 }
+int styleable EdgeEffectView_edgeeffect_color 0

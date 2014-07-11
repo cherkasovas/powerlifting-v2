@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- From: file:/home/user/AndroidStudioProjects/powerlifting-v2/EdgeEffectOverride/src/main/res/values-v19/defaults.xml -->
+    <eat-comment />
+
+    <color name="default_edgeeffect_color">#FF717171</color>
+
+</resources>
