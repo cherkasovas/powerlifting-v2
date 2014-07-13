@@ -2,15 +2,19 @@
 <merger version="2" >
 
     <dataSet config="main" >
-        <source path="/home/user/AndroidStudioProjects/powerlifting-v2/EdgeEffectOverride/src/main/res" >
+        <source path="/home/andrey/AndroidStudioProjects/powerlifting-v2/EdgeEffectOverride/src/main/res" >
             <file
-                path="/home/user/AndroidStudioProjects/powerlifting-v2/EdgeEffectOverride/src/main/res/values/defaults.xml"
-                qualifiers="" >
-                <color name="default_edgeeffect_color" >#FF33B5E5
-                </color>
-            </file>
+                name="overscroll_glow"
+                path="/home/andrey/AndroidStudioProjects/powerlifting-v2/EdgeEffectOverride/src/main/res/drawable-xhdpi/overscroll_glow.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
             <file
-                path="/home/user/AndroidStudioProjects/powerlifting-v2/EdgeEffectOverride/src/main/res/values/attrs.xml"
+                name="overscroll_edge"
+                path="/home/andrey/AndroidStudioProjects/powerlifting-v2/EdgeEffectOverride/src/main/res/drawable-xhdpi/overscroll_edge.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                path="/home/andrey/AndroidStudioProjects/powerlifting-v2/EdgeEffectOverride/src/main/res/values/attrs.xml"
                 qualifiers="" >
                 <declare-styleable name="EdgeEffectView" >
                     <attr
@@ -19,87 +23,83 @@
                 </declare-styleable>
             </file>
             <file
+                path="/home/andrey/AndroidStudioProjects/powerlifting-v2/EdgeEffectOverride/src/main/res/values/defaults.xml"
+                qualifiers="" >
+                <color name="default_edgeeffect_color" >#FF33B5E5
+                </color>
+            </file>
+            <file
                 name="overscroll_glow"
-                path="/home/user/AndroidStudioProjects/powerlifting-v2/EdgeEffectOverride/src/main/res/drawable-xhdpi-v19/overscroll_glow.png"
-                qualifiers="xhdpi-v19"
+                path="/home/andrey/AndroidStudioProjects/powerlifting-v2/EdgeEffectOverride/src/main/res/drawable-xxhdpi-v19/overscroll_glow.png"
+                qualifiers="xxhdpi-v19"
                 type="drawable" />
             <file
                 name="overscroll_edge"
-                path="/home/user/AndroidStudioProjects/powerlifting-v2/EdgeEffectOverride/src/main/res/drawable-xhdpi-v19/overscroll_edge.png"
-                qualifiers="xhdpi-v19"
+                path="/home/andrey/AndroidStudioProjects/powerlifting-v2/EdgeEffectOverride/src/main/res/drawable-xxhdpi-v19/overscroll_edge.png"
+                qualifiers="xxhdpi-v19"
                 type="drawable" />
             <file
-                name="overscroll_glow"
-                path="/home/user/AndroidStudioProjects/powerlifting-v2/EdgeEffectOverride/src/main/res/drawable-mdpi-v19/overscroll_glow.png"
-                qualifiers="mdpi-v19"
-                type="drawable" />
-            <file
-                name="overscroll_edge"
-                path="/home/user/AndroidStudioProjects/powerlifting-v2/EdgeEffectOverride/src/main/res/drawable-mdpi-v19/overscroll_edge.png"
-                qualifiers="mdpi-v19"
-                type="drawable" />
-            <file
-                name="overscroll_glow"
-                path="/home/user/AndroidStudioProjects/powerlifting-v2/EdgeEffectOverride/src/main/res/drawable-hdpi-v19/overscroll_glow.png"
-                qualifiers="hdpi-v19"
-                type="drawable" />
-            <file
-                name="overscroll_edge"
-                path="/home/user/AndroidStudioProjects/powerlifting-v2/EdgeEffectOverride/src/main/res/drawable-hdpi-v19/overscroll_edge.png"
-                qualifiers="hdpi-v19"
-                type="drawable" />
-            <file
-                path="/home/user/AndroidStudioProjects/powerlifting-v2/EdgeEffectOverride/src/main/res/values-v19/defaults.xml"
+                path="/home/andrey/AndroidStudioProjects/powerlifting-v2/EdgeEffectOverride/src/main/res/values-v19/defaults.xml"
                 qualifiers="v19" >
                 <color name="default_edgeeffect_color" >#FF717171
                 </color>
             </file>
             <file
                 name="overscroll_glow"
-                path="/home/user/AndroidStudioProjects/powerlifting-v2/EdgeEffectOverride/src/main/res/drawable-hdpi/overscroll_glow.png"
+                path="/home/andrey/AndroidStudioProjects/powerlifting-v2/EdgeEffectOverride/src/main/res/drawable-hdpi-v19/overscroll_glow.png"
+                qualifiers="hdpi-v19"
+                type="drawable" />
+            <file
+                name="overscroll_edge"
+                path="/home/andrey/AndroidStudioProjects/powerlifting-v2/EdgeEffectOverride/src/main/res/drawable-hdpi-v19/overscroll_edge.png"
+                qualifiers="hdpi-v19"
+                type="drawable" />
+            <file
+                name="overscroll_glow"
+                path="/home/andrey/AndroidStudioProjects/powerlifting-v2/EdgeEffectOverride/src/main/res/drawable-xhdpi-v19/overscroll_glow.png"
+                qualifiers="xhdpi-v19"
+                type="drawable" />
+            <file
+                name="overscroll_edge"
+                path="/home/andrey/AndroidStudioProjects/powerlifting-v2/EdgeEffectOverride/src/main/res/drawable-xhdpi-v19/overscroll_edge.png"
+                qualifiers="xhdpi-v19"
+                type="drawable" />
+            <file
+                name="overscroll_glow"
+                path="/home/andrey/AndroidStudioProjects/powerlifting-v2/EdgeEffectOverride/src/main/res/drawable-hdpi/overscroll_glow.png"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="overscroll_edge"
-                path="/home/user/AndroidStudioProjects/powerlifting-v2/EdgeEffectOverride/src/main/res/drawable-hdpi/overscroll_edge.png"
+                path="/home/andrey/AndroidStudioProjects/powerlifting-v2/EdgeEffectOverride/src/main/res/drawable-hdpi/overscroll_edge.png"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="overscroll_glow"
-                path="/home/user/AndroidStudioProjects/powerlifting-v2/EdgeEffectOverride/src/main/res/drawable-xhdpi/overscroll_glow.png"
-                qualifiers="xhdpi-v4"
+                path="/home/andrey/AndroidStudioProjects/powerlifting-v2/EdgeEffectOverride/src/main/res/drawable-mdpi-v19/overscroll_glow.png"
+                qualifiers="mdpi-v19"
                 type="drawable" />
             <file
                 name="overscroll_edge"
-                path="/home/user/AndroidStudioProjects/powerlifting-v2/EdgeEffectOverride/src/main/res/drawable-xhdpi/overscroll_edge.png"
-                qualifiers="xhdpi-v4"
+                path="/home/andrey/AndroidStudioProjects/powerlifting-v2/EdgeEffectOverride/src/main/res/drawable-mdpi-v19/overscroll_edge.png"
+                qualifiers="mdpi-v19"
                 type="drawable" />
             <file
                 name="overscroll_glow"
-                path="/home/user/AndroidStudioProjects/powerlifting-v2/EdgeEffectOverride/src/main/res/drawable-mdpi/overscroll_glow.png"
+                path="/home/andrey/AndroidStudioProjects/powerlifting-v2/EdgeEffectOverride/src/main/res/drawable-mdpi/overscroll_glow.png"
                 qualifiers="mdpi-v4"
                 type="drawable" />
             <file
                 name="overscroll_edge"
-                path="/home/user/AndroidStudioProjects/powerlifting-v2/EdgeEffectOverride/src/main/res/drawable-mdpi/overscroll_edge.png"
+                path="/home/andrey/AndroidStudioProjects/powerlifting-v2/EdgeEffectOverride/src/main/res/drawable-mdpi/overscroll_edge.png"
                 qualifiers="mdpi-v4"
-                type="drawable" />
-            <file
-                name="overscroll_glow"
-                path="/home/user/AndroidStudioProjects/powerlifting-v2/EdgeEffectOverride/src/main/res/drawable-xxhdpi-v19/overscroll_glow.png"
-                qualifiers="xxhdpi-v19"
-                type="drawable" />
-            <file
-                name="overscroll_edge"
-                path="/home/user/AndroidStudioProjects/powerlifting-v2/EdgeEffectOverride/src/main/res/drawable-xxhdpi-v19/overscroll_edge.png"
-                qualifiers="xxhdpi-v19"
                 type="drawable" />
         </source>
-        <source path="/home/user/AndroidStudioProjects/powerlifting-v2/EdgeEffectOverride/build/generated/res/rs/release" />
-        <source path="/home/user/AndroidStudioProjects/powerlifting-v2/EdgeEffectOverride/build/generated/res/generated/release" />
+        <source path="/home/andrey/AndroidStudioProjects/powerlifting-v2/EdgeEffectOverride/build/generated/res/rs/release" />
+        <source path="/home/andrey/AndroidStudioProjects/powerlifting-v2/EdgeEffectOverride/build/generated/res/generated/release" />
     </dataSet>
     <dataSet config="release" >
-        <source path="/home/user/AndroidStudioProjects/powerlifting-v2/EdgeEffectOverride/src/release/res" />
+        <source path="/home/andrey/AndroidStudioProjects/powerlifting-v2/EdgeEffectOverride/src/release/res" />
     </dataSet>
 
 </merger>

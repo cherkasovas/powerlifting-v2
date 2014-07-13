@@ -3,11 +3,22 @@
 
     <style name="AppBaseTheme" parent="@style/Theme.AppCompat.Light">
         <item name="android:actionBarStyle">@style/MyActionBar</item>
+        <item name="android:editTextBackground">@drawable/main_edit_text_holo_light</item>
+        <item name="android:textColorHighlight">#99ff5722</item>
+        <item name="android:textSelectHandleLeft">@drawable/main_text_select_handle_left</item>
+        <item name="android:textSelectHandleRight">@drawable/main_text_select_handle_right</item>
+        <item name="android:textSelectHandle">@drawable/main_text_select_handle_middle</item>
+        <item name="android:dropDownSpinnerStyle">@style/SpinnerMain</item>
     </style>
 
     <style name="MyActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
         <item name="android:background">@color/orange_status_bar</item>
         <item name="background">@color/orange_status_bar</item>
+    </style>
+
+    <style name="SpinnerMain" parent="android:Widget.Holo.Light.Spinner">
+        <item name="android:background">@drawable/main_spinner_background_holo_light</item>
+        <item name="android:dropDownSelector">@drawable/main_list_selector_holo_light</item>
     </style>
 
 </resources>

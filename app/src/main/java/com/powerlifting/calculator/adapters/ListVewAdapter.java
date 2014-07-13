@@ -7,20 +7,18 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.powerlifting.calculator.Config;
 import com.powerlifting.calculator.R;
-import com.powerlifting.calculator.Utils;
 
 public class ListVewAdapter extends BaseAdapter {
 
-    private float data[][];
-    private Context context;
+    private final Context context;
     private final LayoutInflater inflater;
+    private float data[][];
 
-    public ListVewAdapter(Context context, int type) {
+    public ListVewAdapter(Context context, float data[][]) {
         this.context = context;
+        this.data = data;
         inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        init(type);
     }
 
     @Override
@@ -57,26 +55,5 @@ public class ListVewAdapter extends BaseAdapter {
 
         return item;
     }
-
-    public void updateWith(float weight, int enteredReps, int type) {
-        data = Utils.calculateWeights(weight, enteredReps, type);
-        this.notifyDataSetChanged();
-        this.notifyDataSetInvalidated();
-    }
-
-    private void init(int type) {
-        switch (type) {
-            case 0:
-                data = Utils.calculateWeights(Config.getPressWeight(), Config.getPressReps(), type);
-                break;
-            case 1:
-                data = Utils.calculateWeights(Config.getSquatWeight(), Config.getSquatReps(), type);
-                break;
-            case 2:
-                data = Utils.calculateWeights(Config.getDeadliftWeight(), Config.getDeadliftReps(), type);
-                break;
-        }
-    }
-
 
 }

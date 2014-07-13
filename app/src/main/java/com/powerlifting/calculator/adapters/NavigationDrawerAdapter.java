@@ -19,7 +19,6 @@ public class NavigationDrawerAdapter extends BaseAdapter {
     public NavigationDrawerAdapter(Context context, String[] titles, TypedArray icons) {
         this.titles = titles;
         this.icons = icons;
-
         inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
