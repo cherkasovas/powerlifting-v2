@@ -1,6 +1,7 @@
 package com.powerlifting.calculator.adapters;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,7 +39,12 @@ public class ListVewAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View item = inflater.inflate(R.layout.list_view_item, null);
+        View item;
+        if ((position + 1) == getCount()) {
+            item = inflater.inflate(R.layout.list_view_last_item, null);
+        } else {
+            item = inflater.inflate(R.layout.list_view_item, null);
+        }
         TextView col1 = (TextView) item.findViewById(R.id.col1);
         TextView col2 = (TextView) item.findViewById(R.id.col2);
         TextView col3 = (TextView) item.findViewById(R.id.col3);

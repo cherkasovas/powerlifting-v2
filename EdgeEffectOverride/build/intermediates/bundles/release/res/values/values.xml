@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- From: file:/home/andrey/AndroidStudioProjects/powerlifting-v2/EdgeEffectOverride/src/main/res/values/defaults.xml -->
+    <!-- From: file:/home/user/AndroidStudioProjects/powerlifting-v2/EdgeEffectOverride/src/main/res/values/defaults.xml -->
     <eat-comment />
 
     <color name="default_edgeeffect_color">#FF33B5E5</color>
-    <!-- From: file:/home/andrey/AndroidStudioProjects/powerlifting-v2/EdgeEffectOverride/src/main/res/values/attrs.xml -->
+    <!-- From: file:/home/user/AndroidStudioProjects/powerlifting-v2/EdgeEffectOverride/src/main/res/values/attrs.xml -->
     <eat-comment />
 
     <declare-styleable name="EdgeEffectView">

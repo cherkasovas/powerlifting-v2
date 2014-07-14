@@ -16,5 +16,6 @@
     <string name="reps">Reps</string>
     <string name="weight">Weight</string>
     <string name="percent">%</string>
+    <string name="calc_button">calculate_button</string>
 
 </resources>

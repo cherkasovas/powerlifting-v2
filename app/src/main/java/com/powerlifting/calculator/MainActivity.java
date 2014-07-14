@@ -20,6 +20,8 @@ public class MainActivity extends ActionBarActivity {
     private ListView mNavigationDrawerMenu;
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mDrawerToggle;
+    FragmentManager fragmentManager = getSupportFragmentManager();
+
 
     private AdapterView.OnItemClickListener mMenuClickListener = new AdapterView.OnItemClickListener() {
         @Override
@@ -59,6 +61,8 @@ public class MainActivity extends ActionBarActivity {
         };
 
         mDrawerLayout.setDrawerListener(mDrawerToggle);
+        Fragment fragment = new MainFragment();
+        fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
     }
 
     @Override
@@ -80,9 +84,7 @@ public class MainActivity extends ActionBarActivity {
     }
 
     private void setFragment(int position) {
-        FragmentManager fragmentManager = getSupportFragmentManager();
         Fragment fragment;
-
         if (position % 2 == 0) {
             fragment = new MainFragment();
         } else {

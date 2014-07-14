@@ -24,6 +24,18 @@
         <item name="android:layout_marginBottom">@dimen/table_border_width</item>
     </style>
 
+    <style name="RatioGroupButtons">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">@dimen/table_row_height</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="MainLastItem" parent="Main">
+        <item name="android:layout_marginBottom">-0.5dp</item>
+    </style>
+
     <style name="Main1col" parent="Main">
         <item name="android:layout_weight">2</item>
     </style>

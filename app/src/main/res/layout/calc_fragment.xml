@@ -31,11 +31,12 @@
 
         <ImageButton
             android:id="@+id/calculate"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_gravity="center_vertical"
             android:src="@drawable/calc"
-            android:background="@drawable/rounded_button" />
+            android:background="@drawable/rounded_button"
+            android:contentDescription="@string/calc_button" />
 
     </LinearLayout>
 
@@ -44,28 +45,48 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/calc_control"
+        android:overScrollMode="never"
         android:layout_above="@+id/ratio_group" />
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/ratio_group"
         android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_margin="5dp"
+        android:background="#ff7043"
+        android:layout_height="@dimen/table_row_height">
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
+        <LinearLayout
+            android:id="@+id/indicator"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:background="@color/indicator" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/bench_press_button"
+                style="@style/RatioGroupButtons"
+                android:background="@color/indicator"
+                android:text="@string/bench_press" />
+
+            <TextView
+                android:id="@+id/squat_button"
+                style="@style/RatioGroupButtons"
+                android:text="@string/squat" />
+
+            <TextView
+                android:id="@+id/deadlift_button"
+                style="@style/RatioGroupButtons"
+                android:text="@string/deadlift" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
 
 </RelativeLayout>
