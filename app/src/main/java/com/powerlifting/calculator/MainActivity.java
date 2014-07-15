@@ -12,9 +12,11 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.powerlifting.calculator.Fragments.CalcFragment;
-import com.powerlifting.calculator.Fragments.MainFragment;
 import com.powerlifting.calculator.adapters.NavigationDrawerAdapter;
+import com.powerlifting.calculator.fragments.CalcFragment;
+import com.powerlifting.calculator.fragments.MainFragment;
+import com.powerlifting.calculator.fragments.NormsFragment;
+import com.powerlifting.calculator.fragments.SettingsFragment;
 
 public class MainActivity extends ActionBarActivity {
     private ListView mNavigationDrawerMenu;
@@ -51,17 +53,18 @@ public class MainActivity extends ActionBarActivity {
         mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout,
                 R.drawable.ic_drawer, R.string.app_name, R.string.app_name) {
             public void onDrawerClosed(View view) {
-//                getSupportActionBar().setTitle("asd");
                 supportInvalidateOptionsMenu();
             }
 
             public void onDrawerOpened(View drawerView) {
+                getSupportActionBar().setTitle(getResources().getString(R.string.app_name));
                 supportInvalidateOptionsMenu();
             }
         };
 
         mDrawerLayout.setDrawerListener(mDrawerToggle);
         Fragment fragment = new MainFragment();
+        getSupportActionBar().setTitle(getResources().getString(R.string.main));
         fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
     }
 
@@ -84,12 +87,27 @@ public class MainActivity extends ActionBarActivity {
     }
 
     private void setFragment(int position) {
-        Fragment fragment;
-        if (position % 2 == 0) {
-            fragment = new MainFragment();
-        } else {
-            fragment = new CalcFragment();
+        Fragment fragment = null;
+
+        switch (position) {
+            case 0:
+                fragment = new MainFragment();
+                getSupportActionBar().setTitle(getResources().getString(R.string.main));
+                break;
+            case 1:
+                fragment = new CalcFragment();
+                getSupportActionBar().setTitle(getResources().getString(R.string.calculator));
+                break;
+            case 2:
+                fragment = new NormsFragment();
+                getSupportActionBar().setTitle(getResources().getString(R.string.norms));
+                break;
+            case 3:
+                fragment = new SettingsFragment();
+                getSupportActionBar().setTitle(getResources().getString(R.string.settings));
+                break;
         }
+
         fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
 
         mNavigationDrawerMenu.setItemChecked(position, true);

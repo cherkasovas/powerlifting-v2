@@ -2,10 +2,10 @@
 <resources>
 
     <string-array name="navigation_drawer_menu_titles">
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
+        <item>@string/main</item>
+        <item>@string/calculator</item>
+        <item>@string/norms</item>
+        <item>@string/settings</item>
     </string-array>
 
     <array name="navigation_drawer_icons">

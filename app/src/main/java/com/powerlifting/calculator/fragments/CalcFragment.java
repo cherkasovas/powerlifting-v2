@@ -1,4 +1,4 @@
-package com.powerlifting.calculator.Fragments;
+package com.powerlifting.calculator.fragments;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -76,7 +76,7 @@ public class CalcFragment extends Fragment {
 
         @Override
         public void onPageScrollStateChanged(int state) {
-            benchPressButton.setBackgroundDrawable(null);
+
         }
     };
 
@@ -133,6 +133,7 @@ public class CalcFragment extends Fragment {
             public void onGlobalLayout() {
                 benchPressButton.getViewTreeObserver().removeGlobalOnLayoutListener(this);
                 indicator.getLayoutParams().width = benchPressButton.getWidth();
+                benchPressButton.setBackgroundDrawable(null);
             }
         });
 

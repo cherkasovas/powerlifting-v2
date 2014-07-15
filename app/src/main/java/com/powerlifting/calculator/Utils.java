@@ -3,8 +3,6 @@ package com.powerlifting.calculator;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.content.res.Resources;
-import android.util.DisplayMetrics;
 
 public class Utils {
 
@@ -12,12 +10,6 @@ public class Utils {
         float ans = Math.round(val * 10);
         ans /= 10;
         return ans;
-    }
-
-    public static int dpToPx(float dp, Context context) {
-        DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
-        int px = Math.round(dp * (displayMetrics.xdpi / DisplayMetrics.DENSITY_DEFAULT));
-        return px;
     }
 
     public static void saveVal(String type, float val, Context context) {
@@ -35,14 +27,10 @@ public class Utils {
         return myStat;
     }
 
-    public static float pxToDp(int px) {
-        return (px / Resources.getSystem().getDisplayMetrics().density);
-    }
-
     public static float[][] calculateWeights(float weight, int reps, int type) {
         float[][] weights = new float[2][10];
 
-        float maxWeight = Utils.round(Config.COEFFICIENTS[type][reps] * weight);
+        float maxWeight = getMaxWeightByType(weight, reps, type);
         float percent = maxWeight / 100;
 
         for (int i = 9; i >= 0; i--) {
@@ -52,4 +40,7 @@ public class Utils {
         return weights;
     }
 
+    public static float getMaxWeightByType(float weight, int reps, int type) {
+        return Utils.round(Config.COEFFICIENTS[type][reps] * weight);
+    }
 }

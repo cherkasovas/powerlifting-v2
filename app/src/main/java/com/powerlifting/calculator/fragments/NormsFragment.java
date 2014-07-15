@@ -1,4 +1,4 @@
-package com.powerlifting.calculator.Fragments;
+package com.powerlifting.calculator.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,11 +8,12 @@ import android.view.ViewGroup;
 
 import com.powerlifting.calculator.R;
 
-public class MainFragment extends Fragment {
+public class NormsFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.main_fragment, null);
-    }
+        View view = inflater.inflate(R.layout.norms_ipf_fragment, null);
 
+        return view;
+    }
 }

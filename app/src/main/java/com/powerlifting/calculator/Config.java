@@ -14,17 +14,23 @@ public class Config {
     private final static String BENCH_PRESS_REPS = "bench_press_reps";
     private final static String SQUAT_REPS = "squat_reps";
     private final static String DEADLIFT_REPS = "deadlift_reps";
+    private final static String YOUR_WEIGHT = "your_weight";
+
     private static float pressWeight;
-    private static int pressReps;
     private static float deadliftWeight;
-    private static int deadliftReps;
     private static float squatWeight;
+    private static float yourWeight;
+
+    private static int pressReps;
+    private static int deadliftReps;
     private static int squatReps;
+
     private static Config instance;
     private Context context;
 
     public Config(Context context) {
         this.context = context;
+
         this.init();
     }
 
@@ -59,6 +65,22 @@ public class Config {
             default:
                 return 0;
         }
+    }
+
+    public static float[] getMaxWeights() {
+        float weights[] = new float[3];
+        weights[0] = Utils.getMaxWeightByType(pressWeight, pressReps, 0);
+        weights[1] = Utils.getMaxWeightByType(squatWeight, squatReps, 1);
+        weights[2] = Utils.getMaxWeightByType(deadliftWeight, deadliftReps, 2);
+        return weights;
+    }
+
+    public static float getYourWeight() {
+        return yourWeight;
+    }
+
+    public static void setYourWeight(float yourWeight) {
+        Config.yourWeight = yourWeight;
     }
 
     public static float getPressWeight() {
@@ -113,6 +135,7 @@ public class Config {
         pressWeight = Utils.loadVal(BENCH_PRESS, context);
         squatWeight = Utils.loadVal(SQUAT, context);
         deadliftWeight = Utils.loadVal(DEADLIFT, context);
+        yourWeight = Utils.loadVal(YOUR_WEIGHT, context);
 
         pressReps = (int) Utils.loadVal(BENCH_PRESS_REPS, context);
         squatReps = (int) Utils.loadVal(SQUAT_REPS, context);
@@ -123,6 +146,7 @@ public class Config {
         Utils.saveVal(BENCH_PRESS, pressWeight, context);
         Utils.saveVal(SQUAT, squatWeight, context);
         Utils.saveVal(DEADLIFT, deadliftWeight, context);
+        Utils.saveVal(YOUR_WEIGHT, yourWeight, context);
 
         Utils.saveVal(BENCH_PRESS_REPS, pressReps, context);
         Utils.saveVal(SQUAT_REPS, squatReps, context);
