@@ -1,7 +1,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="40dp">
+    android:layout_height="@dimen/table_row_height">
 
     <ImageView
         android:id="@+id/menu_icon"
@@ -12,6 +12,7 @@
 
     <TextView
         android:id="@+id/menu_title"
+        android:textSize="@dimen/main_text_size"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"/>

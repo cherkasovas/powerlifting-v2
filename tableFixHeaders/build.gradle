@@ -1,0 +1,21 @@
+apply plugin: 'android-library'
+android {
+    compileSdkVersion 18
+    buildToolsVersion '19.1.0'
+    defaultConfig {
+        applicationId 'com.inqbarna.tablefixheaders'
+        minSdkVersion 4
+        targetSdkVersion 17
+    }
+    buildTypes {
+        release {
+            runProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+    productFlavors {
+    }
+}
+
+dependencies {
+}

@@ -18,7 +18,19 @@
         <item name="android:textColor">@android:color/black</item>
         <item name="android:gravity">center_vertical</item>
         <item name="android:paddingLeft">15dp</item>
-        <item name="android:textSize">18sp</item>
+        <item name="android:textSize">@dimen/main_text_size</item>
+        <item name="android:background">@android:color/white</item>
+        <item name="android:layout_marginRight">@dimen/table_border_width</item>
+        <item name="android:layout_marginBottom">@dimen/table_border_width</item>
+    </style>
+
+    <style name="Norms">
+        <item name="android:layout_width">70dp</item>
+        <item name="android:layout_height">@dimen/table_row_height</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:textSize">@dimen/main_text_size</item>
         <item name="android:background">@android:color/white</item>
         <item name="android:layout_marginRight">@dimen/table_border_width</item>
         <item name="android:layout_marginBottom">@dimen/table_border_width</item>
@@ -60,4 +72,5 @@
         <item name="android:checkMark">@drawable/main_btn_radio_holo_light</item>
     </style>
 
+    <dimen name="main_text_size">18sp</dimen>
 </resources>

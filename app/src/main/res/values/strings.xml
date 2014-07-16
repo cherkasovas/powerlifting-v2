@@ -1,6 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <string-array name="navigation_drawer_menu_titles">
+        <item>@string/main</item>
+        <item>@string/calculator</item>
+        <item>@string/norms</item>
+        <item>@string/settings</item>
+    </string-array>
+
+    <array name="navigation_drawer_icons">
+        <item>@drawable/icon</item>
+        <item>@drawable/icon</item>
+        <item>@drawable/icon</item>
+        <item>@drawable/icon</item>
+    </array>
+
+    <string-array name="federations_names">
+        <item>@string/ipf</item>
+        <item>@string/wpc</item>
+        <item>@string/awpc</item>
+    </string-array>
+
+    <array name="ipf_norms_male">
+        <item>* MSIC MS CMS 1 2 3</item>
+        <item>53.0 * * 410.0 325.0 282.5 260.0</item>
+        <item>59.0 625.0 570.0 455.0 362.5 315.0 290.0</item>
+        <item>66.0 700.0 635.0 510.0 402.5 350.0 320.0</item>
+        <item>74.0 770.0 695.0 537.5 440.0 385.0 352.5</item>
+        <item>83.0 835.0 747.5 582.5 482.5 422.5 387.5</item>
+        <item>93.0 880.0 787.5 610.0 520.0 465.0 412.5</item>
+        <item>105.0 920.0 815.0 645.0 552.5 500.0 460.0</item>
+        <item>120.0 955.0 835.0 687.5 600.0 530.0 497.5</item>
+        <item>120+ 980.0 860.0 735.0 617.5 545.0 510.0</item>
+
+    </array>
+
+    <array name="wpc_norms_male">
+        <item>* MSIC MS CMS 1 2 3</item>
+        <item>52 470 407.5 367.5 327.5 285 245</item>
+        <item>56 510 442.5 400 355 310 265</item>
+        <item>60 547.5 475 427.5 380 332.5 285</item>
+        <item>67.5 610 530 477.5 425 370 317.5</item>
+        <item>75 662.5 577.5 517.5 460 402.5 345</item>
+        <item>82.5 707.5 615 552.5 492.5 430 370</item>
+        <item>90 745 647.5 582.5 517.5 452.5 387.5</item>
+        <item>100 785 682.5 615 545 477.5 410</item>
+        <item>110 817.5 710 640 567.5 497.5 425</item>
+        <item>125 852.5 742.5 667.5 592.5 520 445</item>
+        <item>140 880 765 690 612.5 535 460</item>
+        <item>140+ 902.5 785 705 627.5 550 470</item>
+    </array>
+
+    <array name="awpc_norms_male">
+        <item>* MSIC MS CMS 1 2 3</item>
+        <item>52 432.5 377.5 340 302.5 265 227.5</item>
+        <item>56 470 410 367.5 327.5 287.5 245</item>
+        <item>60 505 440 395 350 307.5 262.5</item>
+        <item>67.5 562.5 490 440 392.5 342.5 292.5</item>
+        <item>75 612.5 532.5 480 425 372.5 320</item>
+        <item>82.5 652.5 567.5 510 455 397.5 340</item>
+        <item>90 687.5 597.5 537.5 477.5 417.5 357.5</item>
+        <item>100 725 630 567.5 502.5 440 377.5</item>
+        <item>110 752.5 655 590 525 457.5 392.5</item>
+        <item>125 787.5 685 617.5 547.5 480 410</item>
+        <item>140 812.5 707.5 635 565 495 425</item>
+        <item>140+ 832.5 725 652.5 580 507.5 435</item>
+    </array>
+
     <string name="app_name">Powerlifting</string>
     <string name="menu_icon">menu_icon</string>
     <string name="drawer_open">open</string>
@@ -21,5 +87,13 @@
     <string name="norms">Norms</string>
     <string name="settings">Settings</string>
     <string name="main">Total stats</string>
+    <string name="ipf">(IPF) International Powerlifting Federation</string>
+    <string name="wpc">(WPC) World Powerlifting Congress</string>
+    <string name="awpc">(AWPC) Amateur World Powerlifting Congress</string>
+
+    <string name="msmk">MSIC</string>
+    <string name="ms">MS</string>
+    <string name="kms">CMS</string>
+
 
 </resources>
