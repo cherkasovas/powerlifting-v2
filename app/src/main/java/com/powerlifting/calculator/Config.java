@@ -27,6 +27,7 @@ public class Config {
 
     private static Config instance;
     private Context context;
+    private static int menuItem = 0;
 
     public Config(Context context) {
         this.context = context;
@@ -129,6 +130,14 @@ public class Config {
 
     public static void setSquatReps(int squatReps) {
         Config.squatReps = squatReps;
+    }
+
+    public static int getMenuItem() {
+        return menuItem;
+    }
+
+    public static void setMenuItem(int menuItem) {
+        Config.menuItem = menuItem;
     }
 
     private void init() {

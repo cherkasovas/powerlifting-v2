@@ -3,7 +3,7 @@
     android:singleLine="true"
     android:layout_width="match_parent"
     android:minHeight="@dimen/table_row_height"
-    android:textSize="12sp"
+    android:textSize="16sp"
     android:paddingLeft="15dp"
     android:gravity="center_vertical"
     android:layout_height="wrap_content"

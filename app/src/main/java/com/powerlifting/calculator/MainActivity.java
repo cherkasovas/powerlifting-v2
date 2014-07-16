@@ -54,6 +54,7 @@ public class MainActivity extends ActionBarActivity {
                 R.drawable.ic_drawer, R.string.app_name, R.string.app_name) {
             public void onDrawerClosed(View view) {
                 supportInvalidateOptionsMenu();
+                setTitleByMenuItem(Config.getMenuItem());
             }
 
             public void onDrawerOpened(View drawerView) {
@@ -63,8 +64,7 @@ public class MainActivity extends ActionBarActivity {
         };
 
         mDrawerLayout.setDrawerListener(mDrawerToggle);
-        Fragment fragment = new MainFragment();
-        getSupportActionBar().setTitle(getResources().getString(R.string.main));
+        Fragment fragment = getFragmentByMenuItem(Config.getMenuItem());
         fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
     }
 
@@ -82,36 +82,52 @@ public class MainActivity extends ActionBarActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Config config = Config.getInstance(this);
-        config.saveAll();
+        Config.getInstance(this).saveAll();
     }
 
     private void setFragment(int position) {
-        Fragment fragment = null;
+        Config.setMenuItem(position);
+        Fragment fragment = getFragmentByMenuItem(position);
+        fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
+        mNavigationDrawerMenu.setItemChecked(position, true);
+        mDrawerLayout.closeDrawer(mNavigationDrawerMenu);
+    }
 
+    private Fragment getFragmentByMenuItem(int position) {
+        Fragment fragment = null;
         switch (position) {
             case 0:
                 fragment = new MainFragment();
-                getSupportActionBar().setTitle(getResources().getString(R.string.main));
                 break;
             case 1:
                 fragment = new CalcFragment();
-                getSupportActionBar().setTitle(getResources().getString(R.string.calculator));
                 break;
             case 2:
                 fragment = new NormsFragment();
-                getSupportActionBar().setTitle(getResources().getString(R.string.norms));
                 break;
             case 3:
                 fragment = new SettingsFragment();
+                break;
+        }
+        setTitleByMenuItem(position);
+        return fragment;
+    }
+
+    private void setTitleByMenuItem(int position) {
+        switch (position) {
+            case 0:
+                getSupportActionBar().setTitle(getResources().getString(R.string.main));
+                break;
+            case 1:
+                getSupportActionBar().setTitle(getResources().getString(R.string.calculator));
+                break;
+            case 2:
+                getSupportActionBar().setTitle(getResources().getString(R.string.norms));
+                break;
+            case 3:
                 getSupportActionBar().setTitle(getResources().getString(R.string.settings));
                 break;
         }
-
-        fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
-
-        mNavigationDrawerMenu.setItemChecked(position, true);
-        mDrawerLayout.closeDrawer(mNavigationDrawerMenu);
     }
 
 }

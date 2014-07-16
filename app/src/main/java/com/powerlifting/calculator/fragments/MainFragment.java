@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.powerlifting.calculator.Config;
 import com.powerlifting.calculator.R;
+import com.powerlifting.calculator.Utils;
 
 public class MainFragment extends Fragment {
 
@@ -26,7 +27,7 @@ public class MainFragment extends Fragment {
         benchPressMax.setText(Float.toString(weights[0]));
         deadliftMax.setText(Float.toString(weights[2]));
         squatMax.setText(Float.toString(weights[1]));
-        summMax.setText(Float.toString(weights[0]+weights[1]+weights[2]));
+        summMax.setText(Float.toString(Utils.round(weights[0] + weights[1] + weights[2])));
         summMax.setTextColor(getActivity().getResources().getColor(R.color.red));
         yourWeightMax.setText(Float.toString(Config.getYourWeight()));
 
