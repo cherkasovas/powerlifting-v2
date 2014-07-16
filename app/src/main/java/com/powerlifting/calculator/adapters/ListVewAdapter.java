@@ -53,7 +53,7 @@ public class ListVewAdapter extends BaseAdapter {
         col2.setText(Float.toString(data[0][position]));
         col3.setText(Float.toString(data[1][position]));
 
-        if (position % 2 == 0) {
+        if (position % 2 != 0) {
             col1.setBackgroundColor(context.getResources().getColor(R.color.table_row_color_odd));
             col2.setBackgroundColor(context.getResources().getColor(R.color.table_row_color_odd));
             col3.setBackgroundColor(context.getResources().getColor(R.color.table_row_color_odd));

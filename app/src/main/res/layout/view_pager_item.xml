@@ -18,16 +18,22 @@
             style="@style/Main"
             android:layout_marginLeft="@dimen/table_border_width"
             android:layout_marginTop="@dimen/table_border_width"
+            android:textColor="@android:color/white"
+            android:background="@color/orange_status_bar"
             android:text="@string/reps" />
 
         <TextView
             style="@style/Main"
             android:layout_marginTop="@dimen/table_border_width"
+            android:textColor="@android:color/white"
+            android:background="@color/orange_status_bar"
             android:text="@string/weight" />
 
         <TextView
             style="@style/Main"
             android:layout_marginTop="@dimen/table_border_width"
+            android:textColor="@android:color/white"
+            android:background="@color/orange_status_bar"
             android:text="@string/percent" />
 
     </LinearLayout>

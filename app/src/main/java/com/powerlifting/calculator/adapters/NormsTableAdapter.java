@@ -1,6 +1,7 @@
 package com.powerlifting.calculator.adapters;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -56,7 +57,13 @@ public class NormsTableAdapter extends BaseTableAdapter {
             textView.setText(data[row + 1][column + 1]);
         }
 
-        if (row % 2 != 0) {
+        if (row == -1) {
+            textView.setTextColor(Color.WHITE);
+            textView.setBackgroundColor(context.getResources().getColor(R.color.orange_status_bar));
+        } else if (column == -1) {
+            textView.setTextColor(Color.WHITE);
+            textView.setBackgroundColor(context.getResources().getColor(R.color.orange_status_bar));
+        } else if (row % 2 != 0) {
             textView.setBackgroundColor(context.getResources().getColor(R.color.table_row_color_odd));
         }
         return item;

@@ -10,8 +10,8 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:text="@string/maximum"
-        android:padding="10dp"
-        android:textSize="40sp" />
+        android:padding="15dp"
+        android:textSize="60sp" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -26,15 +26,18 @@
             <TableRow android:layout_marginTop="0.5dp">
 
                 <TextView
+                    android:background="@color/table_row_color_odd"
                     style="@style/Main1col"
                     android:layout_marginLeft="0.5dp"
                     android:text="@string/bench_press" />
 
                 <TextView
+                    android:background="@color/table_row_color_odd"
                     android:id="@+id/bench_press_max"
                     style="@style/Main" />
 
                 <TextView
+                    android:background="@color/table_row_color_odd"
                     android:id="@+id/bench_press_need"
                     style="@style/Main" />
 
@@ -60,15 +63,18 @@
             <TableRow>
 
                 <TextView
+                    android:background="@color/table_row_color_odd"
                     style="@style/Main1col"
                     android:layout_marginLeft="0.5dp"
                     android:text="@string/squat" />
 
                 <TextView
+                    android:background="@color/table_row_color_odd"
                     android:id="@+id/squat_max"
                     style="@style/Main" />
 
                 <TextView
+                    android:background="@color/table_row_color_odd"
                     android:id="@+id/squat_need"
                     style="@style/Main" />
 
@@ -83,6 +89,8 @@
 
                 <TextView
                     android:id="@+id/summ_max"
+                    android:textColor="@color/orange_status_bar"
+                    android:textStyle="bold"
                     style="@style/Main" />
 
                 <TextView
@@ -94,15 +102,18 @@
             <TableRow>
 
                 <TextView
+                    android:background="@color/table_row_color_odd"
                     style="@style/Main1col"
                     android:layout_marginLeft="0.5dp"
                     android:text="@string/your_weight" />
 
                 <TextView
+                    android:background="@color/table_row_color_odd"
                     android:id="@+id/your_weight_max"
                     style="@style/Main" />
 
                 <TextView
+                    android:background="@color/table_row_color_odd"
                     android:id="@+id/your_weight_need"
                     style="@style/Main" />
 

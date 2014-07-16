@@ -28,7 +28,14 @@ public class MainActivity extends ActionBarActivity {
     private AdapterView.OnItemClickListener mMenuClickListener = new AdapterView.OnItemClickListener() {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            setFragment(position);
+            if (position != Config.getMenuItem()) {
+                setFragment(position);
+                NavigationDrawerAdapter adapter = (NavigationDrawerAdapter) mNavigationDrawerMenu.getAdapter();
+                adapter.setChecked(position);
+                adapter.notifyDataSetChanged();
+            }
+
+            mDrawerLayout.closeDrawer(mNavigationDrawerMenu);
         }
     };
 
@@ -89,8 +96,6 @@ public class MainActivity extends ActionBarActivity {
         Config.setMenuItem(position);
         Fragment fragment = getFragmentByMenuItem(position);
         fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
-        mNavigationDrawerMenu.setItemChecked(position, true);
-        mDrawerLayout.closeDrawer(mNavigationDrawerMenu);
     }
 
     private Fragment getFragmentByMenuItem(int position) {

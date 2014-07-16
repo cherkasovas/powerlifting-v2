@@ -2,6 +2,7 @@ package com.powerlifting.calculator.adapters;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,10 +16,13 @@ public class NavigationDrawerAdapter extends BaseAdapter {
     private final String[] titles;
     private final TypedArray icons;
     private LayoutInflater inflater;
+    private int checked = 0;
+    private Context context;
 
     public NavigationDrawerAdapter(Context context, String[] titles, TypedArray icons) {
         this.titles = titles;
         this.icons = icons;
+        this.context = context;
         inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
@@ -44,6 +48,15 @@ public class NavigationDrawerAdapter extends BaseAdapter {
         TextView menuTitle = (TextView) menuItem.findViewById(R.id.menu_title);
         menuIcon.setBackgroundResource(icons.getResourceId(position, R.id.none));
         menuTitle.setText(titles[position]);
+        if (position == checked) {
+            menuItem.setBackgroundColor(context.getResources().getColor(R.color.nav_drawer_cheched));
+            menuTitle.setTextColor(Color.WHITE);
+        }
         return menuItem;
     }
+
+    public void setChecked(int index) {
+        this.checked = index;
+    }
+
 }

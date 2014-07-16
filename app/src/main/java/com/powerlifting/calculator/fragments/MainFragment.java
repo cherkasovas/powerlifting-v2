@@ -28,7 +28,6 @@ public class MainFragment extends Fragment {
         deadliftMax.setText(Float.toString(weights[2]));
         squatMax.setText(Float.toString(weights[1]));
         summMax.setText(Float.toString(Utils.round(weights[0] + weights[1] + weights[2])));
-        summMax.setTextColor(getActivity().getResources().getColor(R.color.red));
         yourWeightMax.setText(Float.toString(Config.getYourWeight()));
 
         return view;
