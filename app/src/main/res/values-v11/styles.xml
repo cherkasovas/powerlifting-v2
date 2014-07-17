@@ -9,6 +9,7 @@
         <item name="android:textSelectHandleRight">@drawable/main_text_select_handle_right</item>
         <item name="android:textSelectHandle">@drawable/main_text_select_handle_middle</item>
         <item name="android:dropDownSpinnerStyle">@style/SpinnerMain</item>
+        <item name="android:listChoiceIndicatorMultiple">@drawable/main_btn_check_holo_light</item>
     </style>
 
     <style name="MyActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">

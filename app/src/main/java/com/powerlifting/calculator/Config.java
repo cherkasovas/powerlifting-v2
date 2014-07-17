@@ -15,6 +15,9 @@ public class Config {
     private final static String SQUAT_REPS = "squat_reps";
     private final static String DEADLIFT_REPS = "deadlift_reps";
     private final static String YOUR_WEIGHT = "your_weight";
+    private final static String YOUR_GENDER = "your_gender";
+    private final static String YOUR_FEDERATION = "your_federation";
+    private final static String IS_EXPAND = "is_expand";
 
     private static float pressWeight;
     private static float deadliftWeight;
@@ -24,6 +27,10 @@ public class Config {
     private static int pressReps;
     private static int deadliftReps;
     private static int squatReps;
+
+    private static boolean isExpanded;
+    private static int yourFederation;
+    private static int yourGender;
 
     private static Config instance;
     private Context context;
@@ -140,6 +147,30 @@ public class Config {
         Config.menuItem = menuItem;
     }
 
+    public static int getYourGender() {
+        return yourGender;
+    }
+
+    public static void setYourGender(int yourGender) {
+        Config.yourGender = yourGender;
+    }
+
+    public static int getYourFederation() {
+        return yourFederation;
+    }
+
+    public static void setYourFederation(int yourFederation) {
+        Config.yourFederation = yourFederation;
+    }
+
+    public static Boolean getIsExtended() {
+        return isExpanded;
+    }
+
+    public static void setIsExpanded(Boolean isExpanded) {
+        Config.isExpanded = isExpanded;
+    }
+
     private void init() {
         pressWeight = Utils.loadVal(BENCH_PRESS, context);
         squatWeight = Utils.loadVal(SQUAT, context);
@@ -149,6 +180,22 @@ public class Config {
         pressReps = (int) Utils.loadVal(BENCH_PRESS_REPS, context);
         squatReps = (int) Utils.loadVal(SQUAT_REPS, context);
         deadliftReps = (int) Utils.loadVal(DEADLIFT_REPS, context);
+
+        isExpanded = getBoolean(Utils.loadVal(IS_EXPAND, context));
+        yourFederation = (int) Utils.loadVal(YOUR_FEDERATION, context);
+        yourGender = (int) Utils.loadVal(YOUR_GENDER, context);
+    }
+
+    private boolean getBoolean(float value) {
+        return value != 0;
+    }
+
+    private int getInt(Boolean b) {
+        if (b) {
+            return 1;
+        } else {
+            return 0;
+        }
     }
 
     public void saveAll() {
@@ -160,6 +207,10 @@ public class Config {
         Utils.saveVal(BENCH_PRESS_REPS, pressReps, context);
         Utils.saveVal(SQUAT_REPS, squatReps, context);
         Utils.saveVal(DEADLIFT_REPS, deadliftReps, context);
+
+        Utils.saveVal(IS_EXPAND, getInt(isExpanded), context);
+        Utils.saveVal(YOUR_FEDERATION, yourFederation, context);
+        Utils.saveVal(YOUR_GENDER, yourGender, context);
     }
 
     public void setWeightAndRepsByType(float weight, int reps, int type) {

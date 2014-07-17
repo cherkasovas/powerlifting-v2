@@ -15,13 +15,16 @@ import com.powerlifting.calculator.R;
 public class NavigationDrawerAdapter extends BaseAdapter {
     private final String[] titles;
     private final TypedArray icons;
+    private final TypedArray checkedIcons;
     private LayoutInflater inflater;
     private int checked = 0;
     private Context context;
 
-    public NavigationDrawerAdapter(Context context, String[] titles, TypedArray icons) {
+    public NavigationDrawerAdapter(Context context, String[] titles, TypedArray icons,
+                                   TypedArray checkedIcon) {
         this.titles = titles;
         this.icons = icons;
+        this.checkedIcons = checkedIcon;
         this.context = context;
         inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
@@ -46,10 +49,11 @@ public class NavigationDrawerAdapter extends BaseAdapter {
         View menuItem = inflater.inflate(R.layout.navigation_drawer_menu_item, null);
         ImageView menuIcon = (ImageView) menuItem.findViewById(R.id.menu_icon);
         TextView menuTitle = (TextView) menuItem.findViewById(R.id.menu_title);
-        menuIcon.setBackgroundResource(icons.getResourceId(position, R.id.none));
+        menuIcon.setImageResource(icons.getResourceId(position, R.id.none));
         menuTitle.setText(titles[position]);
         if (position == checked) {
             menuItem.setBackgroundColor(context.getResources().getColor(R.color.nav_drawer_cheched));
+            menuIcon.setImageResource(checkedIcons.getResourceId(position, R.id.none));
             menuTitle.setTextColor(Color.WHITE);
         }
         return menuItem;

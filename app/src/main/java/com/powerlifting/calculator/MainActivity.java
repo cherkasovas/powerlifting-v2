@@ -2,6 +2,7 @@ package com.powerlifting.calculator;
 
 import android.content.res.TypedArray;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -28,6 +29,7 @@ public class MainActivity extends ActionBarActivity {
     private AdapterView.OnItemClickListener mMenuClickListener = new AdapterView.OnItemClickListener() {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
             if (position != Config.getMenuItem()) {
                 setFragment(position);
                 NavigationDrawerAdapter adapter = (NavigationDrawerAdapter) mNavigationDrawerMenu.getAdapter();
@@ -35,7 +37,15 @@ public class MainActivity extends ActionBarActivity {
                 adapter.notifyDataSetChanged();
             }
 
-            mDrawerLayout.closeDrawer(mNavigationDrawerMenu);
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+
+                    mDrawerLayout.closeDrawer(mNavigationDrawerMenu);
+
+                }
+            }, 80);
+
         }
     };
 
@@ -43,15 +53,19 @@ public class MainActivity extends ActionBarActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getSupportActionBar().setIcon(R.drawable.dumbbell);
         Config.getInstance(this);
 
         String[] mNavigationDrawerMenuTitles = getResources().getStringArray(R.array.navigation_drawer_menu_titles);
         TypedArray mNavigationDrawerMenuIcons = getResources().obtainTypedArray(R.array.navigation_drawer_icons);
+        TypedArray mNavigationDrawerMenuCheckedIcons = getResources()
+                .obtainTypedArray(R.array.navigation_drawer_icons_checked);
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mNavigationDrawerMenu = (ListView) findViewById(R.id.left_drawer);
 
-        NavigationDrawerAdapter mNavigationDrawerAdapter = new NavigationDrawerAdapter(this, mNavigationDrawerMenuTitles, mNavigationDrawerMenuIcons);
+        NavigationDrawerAdapter mNavigationDrawerAdapter = new NavigationDrawerAdapter(this,
+                mNavigationDrawerMenuTitles, mNavigationDrawerMenuIcons, mNavigationDrawerMenuCheckedIcons);
         mNavigationDrawerMenu.setAdapter(mNavigationDrawerAdapter);
         mNavigationDrawerMenu.setOnItemClickListener(mMenuClickListener);
 

@@ -6,6 +6,7 @@
         <item name="android:textColorHighlight">#99ff5722</item>
         <item name="android:spinnerStyle">@style/SpinnerMain</item>
         <item name="android:spinnerDropDownItemStyle">@style/SpinnerDropDownItemMain</item>
+        <item name="android:checkboxStyle">@style/CheckBoxmain</item>
 
         <!--<item name="android:windowTranslucentStatus">true</item>-->
         <!--<item name="android:windowTranslucentNavigation">true</item>-->
@@ -63,6 +64,10 @@
         <item name="android:textColor">#000000</item>
     </style>
 
+    <style name="CheckBoxmain" parent="android:Widget.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/main_btn_check_holo_light</item>
+    </style>
+
     <style name="SpinnerMain" parent="android:Widget.Spinner">
         <item name="android:background">@drawable/main_spinner_background_holo_light</item>
         <item name="android:dropDownSelector">@drawable/main_list_selector_holo_light</item>
@@ -72,5 +77,12 @@
         <item name="android:checkMark">@drawable/main_btn_radio_holo_light</item>
     </style>
 
-    <dimen name="main_text_size">18sp</dimen>
+    <style name="settings_text_view">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:textSize">@dimen/main_text_size</item>
+        <item name="android:gravity">center</item>
+    </style>
+
 </resources>
