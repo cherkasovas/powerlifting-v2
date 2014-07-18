@@ -1,8 +1,12 @@
 package com.powerlifting.calculator;
 
 
+import android.app.Service;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.support.v4.app.FragmentActivity;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
 
 public class Utils {
 
@@ -42,5 +46,11 @@ public class Utils {
 
     public static float getMaxWeightByType(float weight, int reps, int type) {
         return Utils.round(Config.COEFFICIENTS[type][reps] * weight);
+    }
+
+    public static void hideKeyBoard(Context context, EditText editText) {
+        InputMethodManager imm = (InputMethodManager) context.getSystemService(Service.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(editText.getWindowToken(), 0);
+        editText.clearFocus();
     }
 }

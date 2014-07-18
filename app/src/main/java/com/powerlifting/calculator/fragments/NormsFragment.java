@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
 import com.inqbarna.tablefixheaders.TableFixHeaders;
+import com.powerlifting.calculator.Config;
 import com.powerlifting.calculator.R;
 import com.powerlifting.calculator.adapters.NormsTableAdapter;
 
@@ -35,14 +36,14 @@ public class NormsFragment extends Fragment {
 
         String[] FEDERATIONS = getResources().getStringArray(R.array.federations_names);
         Spinner normsSpinner = (Spinner) view.findViewById(R.id.norms_spinner);
-        ArrayAdapter adapter = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item, FEDERATIONS);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
+                android.R.layout.simple_spinner_item, FEDERATIONS);
         adapter.setDropDownViewResource(R.layout.spiner_item);
         normsSpinner.setAdapter(adapter);
+        normsSpinner.setSelection(Config.getYourFederation());
         normsSpinner.setOnItemSelectedListener(onItemSelectedListener);
 
         tableFixHeaders = (TableFixHeaders) view.findViewById(R.id.table);
-        tableFixHeaders.setAdapter(new NormsTableAdapter(getActivity(), 0));
-
 
         return view;
     }

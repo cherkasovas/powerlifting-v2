@@ -17,18 +17,14 @@ public class MainFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.main_fragment, null);
 
-        TextView benchPressMax = (TextView) view.findViewById(R.id.bench_press_max);
-        TextView deadliftMax = (TextView) view.findViewById(R.id.deadlift_max);
-        TextView squatMax = (TextView) view.findViewById(R.id.squat_max);
-        TextView summMax = (TextView) view.findViewById(R.id.summ_max);
-        TextView yourWeightMax = (TextView) view.findViewById(R.id.your_weight_max);
-
         float[] weights = Config.getMaxWeights();
-        benchPressMax.setText(Float.toString(weights[0]));
-        deadliftMax.setText(Float.toString(weights[2]));
-        squatMax.setText(Float.toString(weights[1]));
-        summMax.setText(Float.toString(Utils.round(weights[0] + weights[1] + weights[2])));
-        yourWeightMax.setText(Float.toString(Config.getYourWeight()));
+        float summMax = weights[0] + weights[1] + weights[2];
+
+        ((TextView) view.findViewById(R.id.bench_press_max)).setText(Float.toString(weights[0]));
+        ((TextView) view.findViewById(R.id.deadlift_max)).setText(Float.toString(weights[2]));
+        ((TextView) view.findViewById(R.id.squat_max)).setText(Float.toString(weights[1]));
+        ((TextView) view.findViewById(R.id.summ_max)).setText(Float.toString(Utils.round(summMax)));
+        ((TextView) view.findViewById(R.id.your_weight_max)).setText(Float.toString(weights[3]));
 
         return view;
     }

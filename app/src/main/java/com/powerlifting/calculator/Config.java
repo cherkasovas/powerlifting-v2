@@ -30,7 +30,7 @@ public class Config {
 
     private static boolean isExpanded;
     private static int yourFederation;
-    private static int yourGender;
+    private static boolean yourGender;
 
     private static Config instance;
     private Context context;
@@ -76,10 +76,11 @@ public class Config {
     }
 
     public static float[] getMaxWeights() {
-        float weights[] = new float[3];
+        float weights[] = new float[4];
         weights[0] = Utils.getMaxWeightByType(pressWeight, pressReps, 0);
         weights[1] = Utils.getMaxWeightByType(squatWeight, squatReps, 1);
         weights[2] = Utils.getMaxWeightByType(deadliftWeight, deadliftReps, 2);
+        weights[3] = yourWeight;
         return weights;
     }
 
@@ -147,11 +148,11 @@ public class Config {
         Config.menuItem = menuItem;
     }
 
-    public static int getYourGender() {
+    public static boolean getYourGender() {
         return yourGender;
     }
 
-    public static void setYourGender(int yourGender) {
+    public static void setYourGender(boolean yourGender) {
         Config.yourGender = yourGender;
     }
 
@@ -183,7 +184,7 @@ public class Config {
 
         isExpanded = getBoolean(Utils.loadVal(IS_EXPAND, context));
         yourFederation = (int) Utils.loadVal(YOUR_FEDERATION, context);
-        yourGender = (int) Utils.loadVal(YOUR_GENDER, context);
+        yourGender = getBoolean(Utils.loadVal(YOUR_GENDER, context));
     }
 
     private boolean getBoolean(float value) {
@@ -210,7 +211,7 @@ public class Config {
 
         Utils.saveVal(IS_EXPAND, getInt(isExpanded), context);
         Utils.saveVal(YOUR_FEDERATION, yourFederation, context);
-        Utils.saveVal(YOUR_GENDER, yourGender, context);
+        Utils.saveVal(YOUR_GENDER, getInt(yourGender), context);
     }
 
     public void setWeightAndRepsByType(float weight, int reps, int type) {
