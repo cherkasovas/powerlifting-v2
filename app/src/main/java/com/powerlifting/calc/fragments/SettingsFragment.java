@@ -68,7 +68,6 @@ public class SettingsFragment extends Fragment {
         gender = (ToggleButton) view.findViewById(R.id.gender);
         gender.setChecked(Config.getYourGender());
 
-
         view.findViewById(R.id.your_weight_settings).setOnClickListener(yourWeightListener);
         view.findViewById(R.id.priority_federation_settings).setOnClickListener(listener);
         view.findViewById(R.id.is_extended_settings).setOnClickListener(listener);

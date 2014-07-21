@@ -52,7 +52,7 @@ public class NavigationDrawerAdapter extends BaseAdapter {
         menuIcon.setImageResource(icons.getResourceId(position, R.id.none));
         menuTitle.setText(titles[position]);
         if (position == checked) {
-            menuItem.setBackgroundColor(context.getResources().getColor(R.color.nav_drawer_cheched));
+            menuItem.setBackgroundColor(context.getResources().getColor(R.color.nav_drawer_checked));
             menuIcon.setImageResource(checkedIcons.getResourceId(position, R.id.none));
             menuTitle.setTextColor(Color.WHITE);
         }

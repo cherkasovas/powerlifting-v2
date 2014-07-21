@@ -2,11 +2,12 @@
 <resources>
 
     <color name="orange_status_bar">#ff5722</color>
-    <color name="shadow_table">#bbb</color>
-    <color name="table_border_color">#555</color>
+    <color name="shadow_table">#bbbbbb</color>
+    <color name="table_border_color">#555555</color>
     <color name="table_row_color_odd">#fbe9e7</color>
     <color name="indicator">#ff3d00</color>
     <color name="red">#dd191d</color>
-    <color name="nav_drawer_cheched">#ff7043</color>
+    <color name="nav_drawer_checked">#ff7043</color>
+    <color name="r_button_pressed">#dd2c00</color>
 
 </resources>

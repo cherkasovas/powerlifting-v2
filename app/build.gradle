@@ -24,4 +24,6 @@ dependencies {
     compile 'com.android.support:appcompat-v7:19.+'
     compile project(':EdgeEffectOverride')
     compile project(':tableFixHeaders')
+    compile files('src/libs/libGoogleAnalyticsServices.jar')
+    compile 'com.github.hotchemi:android-rate:0.3.1'
 }

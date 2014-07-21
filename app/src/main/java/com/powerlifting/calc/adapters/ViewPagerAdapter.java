@@ -29,7 +29,7 @@ public class ViewPagerAdapter extends PagerAdapter {
         float[][] data = Utils.calculateWeights(Config.getWeightByType(type), Config.getRepsByType(type), type);
         ListVewAdapter listVewAdapter = new ListVewAdapter(context, data);
         listView.setAdapter(listVewAdapter);
-        collection.addView(page, 0);
+        collection.addView(page);
         return page;
     }
 

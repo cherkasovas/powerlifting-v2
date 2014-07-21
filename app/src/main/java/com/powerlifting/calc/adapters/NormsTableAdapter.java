@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.inqbarna.tablefixheaders.adapters.BaseTableAdapter;
+import com.powerlifting.calc.Config;
 import com.powerlifting.calc.R;
 
 public class NormsTableAdapter extends BaseTableAdapter {
@@ -18,18 +19,34 @@ public class NormsTableAdapter extends BaseTableAdapter {
     public NormsTableAdapter(Context context, int type) {
         this.context = context;
         String[] preData = null;
-        switch (type) {
-            case 0:
-                preData = context.getResources().getStringArray(R.array.ipf_norms_male);
-                break;
-            case 1:
-                preData = context.getResources().getStringArray(R.array.wpc_norms_male);
-                break;
-            case 2:
-                preData = context.getResources().getStringArray(R.array.awpc_norms_male);
-                break;
+        if (!Config.getYourGender()) {
+            switch (type) {
+                case 0:
+                    preData = context.getResources().getStringArray(R.array.ipf_norms_male);
+                    break;
+                case 1:
+                    preData = context.getResources().getStringArray(R.array.wpc_norms_male);
+                    break;
+                case 2:
+                    preData = context.getResources().getStringArray(R.array.awpc_norms_male);
+                    break;
+            }
+        } else {
+            switch (type) {
+                case 0:
+                    preData = context.getResources().getStringArray(R.array.ipf_norms_female);
+                    break;
+                case 1:
+                    preData = context.getResources().getStringArray(R.array.wpc_norms_female);
+                    break;
+                case 2:
+                    preData = context.getResources().getStringArray(R.array.awpc_norms_female);
+                    break;
+            }
         }
 
+
+        assert preData != null;
         data = new String[preData.length][preData.length];
         for (int i = 0; i < preData.length; i++) {
             data[i] = preData[i].split(" ");

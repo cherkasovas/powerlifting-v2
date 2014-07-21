@@ -13,12 +13,14 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.powerlifting.calc.R;
+import com.google.analytics.tracking.android.EasyTracker;
 import com.powerlifting.calc.adapters.NavigationDrawerAdapter;
 import com.powerlifting.calc.fragments.CalcFragment;
 import com.powerlifting.calc.fragments.MainFragment;
 import com.powerlifting.calc.fragments.NormsFragment;
 import com.powerlifting.calc.fragments.SettingsFragment;
+
+import hotchemi.android.rate.AppRate;
 
 public class MainActivity extends ActionBarActivity {
     private ListView mNavigationDrawerMenu;
@@ -56,6 +58,15 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
         getSupportActionBar().setIcon(R.drawable.dumbbell);
         Config.getInstance(this);
+
+        AppRate appRate = AppRate.build()
+                .setInstallDays(0)
+                .setLaunchTimes(3)
+                .setRemindInterval(2)
+                .setShowNeutralButton(true)
+                .setDebug(false).monitor(this);
+
+        appRate.showRateDialogIfMeetsConditions(this);
 
         String[] mNavigationDrawerMenuTitles = getResources().getStringArray(R.array.navigation_drawer_menu_titles);
         TypedArray mNavigationDrawerMenuIcons = getResources().obtainTypedArray(R.array.navigation_drawer_icons);
@@ -105,6 +116,18 @@ public class MainActivity extends ActionBarActivity {
     protected void onDestroy() {
         super.onDestroy();
         Config.getInstance(this).saveAll();
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        EasyTracker.getInstance(this).activityStart(this);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        EasyTracker.getInstance(this).activityStop(this);
     }
 
     private void setFragment(int position) {

@@ -34,7 +34,7 @@
     </string-array>
 
     <array name="ipf_norms_male">
-        <item>* MSIC MS CMS 1 2 3</item>
+        <item>* МСМК МС КМС 1 2 3</item>
         <item>53.0 * * 410.0 325.0 282.5 260.0</item>
         <item>59.0 625.0 570.0 455.0 362.5 315.0 290.0</item>
         <item>66.0 700.0 635.0 510.0 402.5 350.0 320.0</item>
@@ -47,7 +47,7 @@
     </array>
 
     <array name="wpc_norms_male">
-        <item>* MSIC MS CMS 1 2 3</item>
+        <item>* МСМК МС КМС 1 2 3</item>
         <item>52 470 407.5 367.5 327.5 285 245</item>
         <item>56 510 442.5 400 355 310 265</item>
         <item>60 547.5 475 427.5 380 332.5 285</item>
@@ -63,7 +63,7 @@
     </array>
 
     <array name="awpc_norms_male">
-        <item>* MSIC MS CMS 1 2 3</item>
+        <item>* МСМК МС КМС 1 2 3</item>
         <item>52 432.5 377.5 340 302.5 265 227.5</item>
         <item>56 470 410 367.5 327.5 287.5 245</item>
         <item>60 505 440 395 350 307.5 262.5</item>
@@ -79,7 +79,7 @@
     </array>
 
     <array name="ipf_norms_female">
-        <item>* MSIC MS CMS 1 2 3</item>
+        <item>* МСМК МС КМС 1 2 3</item>
         <item>43.0 * * 242.5 175.0 150.0 137.5</item>
         <item>47.0 367.5 297.5 262.5 190.0 165.0 150.0</item>
         <item>52.0 405.0 325.0 290.0 210.0 182.5 167.5</item>
@@ -91,7 +91,7 @@
     </array>
 
     <array name="wpc_norms_female">
-        <item>* MSIC MS CMS 1 2 3</item>
+        <item>* МСМК МС КМС 1 2 3</item>
         <item>44 300 260 235 210 182.5 157.5</item>
         <item>48 330 287.5 260 230 202.5 172.5</item>
         <item>52 360 312.5 282.5 250 220 187.5</item>
@@ -105,7 +105,7 @@
     </array>
 
     <array name="awpc_norms_female">
-        <item>* MSIC MS CMS 1 2 3</item>
+        <item>* МСМК МС КМС 1 2 3</item>
         <item>44 255 222.5 200 177.5 155 132.5</item>
         <item>48 282.5 245 220 195 172.5 147.5</item>
         <item>52 345 305 265 240 212.5 185 160</item>
@@ -121,38 +121,29 @@
 
     <string name="app_name">Powerlifting</string>
     <string name="menu_icon">menu_icon</string>
-    <string name="drawer_open">open</string>
-    <string name="drawer_close">close</string>
-    <string name="bench_press">Bench press</string>
-    <string name="deadlift">Deadlift</string>
-    <string name="squat">Squat</string>
-    <string name="summ">Total</string>
-    <string name="your_weight">Your weight</string>
-    <string name="maximum">Maximum</string>
+    <string name="bench_press">Жим</string>
+    <string name="deadlift">Становая</string>
+    <string name="squat">Присед</string>
+    <string name="summ">Сумма</string>
+    <string name="your_weight">Свой вес</string>
+    <string name="maximum">Максимум</string>
     <string name="calc">Calc</string>
-    <string name="reps">Reps</string>
-    <string name="weight">Weight</string>
+    <string name="reps">Повторы</string>
+    <string name="weight">Вес</string>
     <string name="percent">%</string>
     <string name="calc_button">calculate_button</string>
 
-    <string name="calculator">Calculator</string>
-    <string name="norms">Norms</string>
-    <string name="settings">Settings</string>
-    <string name="main">Total stats</string>
+    <string name="calculator">Калькулятор</string>
+    <string name="norms">Нормативы</string>
+    <string name="settings">Настройки</string>
+    <string name="main">Статистика</string>
 
     <string name="ipf">IPF</string>
     <string name="wpc">WPC</string>
     <string name="awpc">AWPC</string>
 
-    <string name="msmk">MSIC</string>
-    <string name="ms">MS</string>
-    <string name="kms">CMS</string>
-
-    <string name="priority_federation">Priority federation</string>
-    <string name="extended_percent">Extended partition in calc</string>
-    <string name="gender">Gender</string>
-    <string name="male">Male</string>
-    <string name="female">Female</string>
-
+    <string name="priority_federation">Приоритетная федерация</string>
+    <string name="extended_percent">Расширенное разбиение на %</string>
+    <string name="gender">Пол</string>
 
 </resources>
