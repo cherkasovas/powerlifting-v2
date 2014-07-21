@@ -6,6 +6,8 @@
         android:icon="@drawable/ic_launcher"
         android:theme="@style/AppBaseTheme"
         android:logo="@drawable/dumbbell"
+        android:versionCode="1"
+        android:versionName="2"
         android:label="@string/app_name">
         <activity
             android:name=".MainActivity"

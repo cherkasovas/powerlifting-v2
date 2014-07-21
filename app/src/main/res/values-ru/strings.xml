@@ -121,6 +121,8 @@
 
     <string name="app_name">Powerlifting</string>
     <string name="menu_icon">menu_icon</string>
+    <string name="drawer_open">open</string>
+    <string name="drawer_close">close</string>
     <string name="bench_press">Жим</string>
     <string name="deadlift">Становая</string>
     <string name="squat">Присед</string>
@@ -142,8 +144,14 @@
     <string name="wpc">WPC</string>
     <string name="awpc">AWPC</string>
 
+    <string name="msmk">MSIC</string>
+    <string name="ms">MS</string>
+    <string name="kms">CMS</string>
+
     <string name="priority_federation">Приоритетная федерация</string>
     <string name="extended_percent">Расширенное разбиение на %</string>
     <string name="gender">Пол</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
 
 </resources>
