@@ -26,4 +26,5 @@ dependencies {
     compile project(':tableFixHeaders')
     compile files('src/libs/libGoogleAnalyticsServices.jar')
     compile 'com.github.hotchemi:android-rate:0.3.1'
+    compile 'com.google.android.gms:play-services:+'
 }

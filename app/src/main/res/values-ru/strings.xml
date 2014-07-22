@@ -118,7 +118,7 @@
         <item>90+ 520 460 400 360 320 280 240</item>
     </array>
 
-
+    <string name="admob_publisher_id">a153ce1b84a0597</string>
     <string name="app_name">Powerlifting</string>
     <string name="menu_icon">menu_icon</string>
     <string name="drawer_open">open</string>

@@ -11,9 +11,13 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import com.google.analytics.tracking.android.EasyTracker;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
 import com.powerlifting.calc.adapters.NavigationDrawerAdapter;
 import com.powerlifting.calc.fragments.CalcFragment;
 import com.powerlifting.calc.fragments.MainFragment;
@@ -26,6 +30,7 @@ public class MainActivity extends ActionBarActivity {
     private ListView mNavigationDrawerMenu;
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mDrawerToggle;
+    private AdView adView;
     FragmentManager fragmentManager = getSupportFragmentManager();
 
 
@@ -58,6 +63,14 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
         getSupportActionBar().setIcon(R.drawable.dumbbell);
         Config.getInstance(this);
+
+        adView = new AdView(this);
+        adView.setAdUnitId(getResources().getString(R.string.admob_publisher_id));
+        adView.setAdSize(AdSize.BANNER);
+        LinearLayout layout = (LinearLayout) findViewById(R.id.ad);
+        layout.addView(adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
 
         AppRate appRate = AppRate.build()
                 .setInstallDays(0)
@@ -114,14 +127,27 @@ public class MainActivity extends ActionBarActivity {
 
     @Override
     protected void onDestroy() {
-        super.onDestroy();
+        adView.destroy();
         Config.getInstance(this).saveAll();
+        super.onDestroy();
     }
 
     @Override
     public void onStart() {
         super.onStart();
         EasyTracker.getInstance(this).activityStart(this);
+    }
+
+    @Override
+    public void onPause() {
+        adView.pause();
+        super.onPause();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        adView.resume();
     }
 
     @Override
