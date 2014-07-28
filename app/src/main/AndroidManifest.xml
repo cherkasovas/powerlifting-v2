@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     android:installLocation="preferExternal"
-    android:versionCode="1"
-    android:versionName="2"
+    android:versionCode="2"
+    android:versionName="2.1"
     package="com.powerlifting.calc">
 
     <application
@@ -27,6 +27,7 @@
         <activity
             android:name="com.google.android.gms.ads.AdActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
+        <meta-data android:name="com.crashlytics.ApiKey" android:value="f79e223bfeb1dffda057182b95208c99f19677e2"/>
 
     </application>
 

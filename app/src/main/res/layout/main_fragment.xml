@@ -38,7 +38,6 @@
 
                 <TextView
                     android:background="@color/table_row_color_odd"
-                    android:visibility="gone"
                     android:id="@+id/bench_press_need"
                     style="@style/Main" />
 
@@ -49,15 +48,15 @@
                 <TextView
                     style="@style/Main1col"
                     android:layout_marginLeft="0.5dp"
-                    android:text="@string/deadlift" />
+                    android:text="@string/squat" />
 
                 <TextView
-                    android:id="@+id/deadlift_max"
+
+                    android:id="@+id/squat_max"
                     style="@style/Main" />
 
                 <TextView
-                    android:visibility="gone"
-                    android:id="@+id/deadlift_need"
+                    android:id="@+id/squat_need"
                     style="@style/Main" />
 
             </TableRow>
@@ -68,17 +67,16 @@
                     android:background="@color/table_row_color_odd"
                     style="@style/Main1col"
                     android:layout_marginLeft="0.5dp"
-                    android:text="@string/squat" />
+                    android:text="@string/deadlift" />
 
                 <TextView
                     android:background="@color/table_row_color_odd"
-                    android:id="@+id/squat_max"
+                    android:id="@+id/deadlift_max"
                     style="@style/Main" />
 
                 <TextView
-                    android:visibility="gone"
                     android:background="@color/table_row_color_odd"
-                    android:id="@+id/squat_need"
+                    android:id="@+id/deadlift_need"
                     style="@style/Main" />
 
             </TableRow>
@@ -97,7 +95,6 @@
                     style="@style/Main" />
 
                 <TextView
-                    android:visibility="gone"
                     android:id="@+id/summ_need"
                     style="@style/Main" />
 
@@ -117,7 +114,6 @@
                     style="@style/Main" />
 
                 <TextView
-                    android:visibility="gone"
                     android:background="@color/table_row_color_odd"
                     android:id="@+id/your_weight_need"
                     style="@style/Main" />

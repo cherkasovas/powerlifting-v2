@@ -26,8 +26,7 @@ public class Utils {
     public static float loadVal(String type, Context context) {
         SharedPreferences pref;
         pref = context.getSharedPreferences("settings", 0);
-        float myStat = pref.getFloat(type, 0);
-        return myStat;
+        return pref.getFloat(type, 0);
     }
 
     public static float[][] calculateWeights(float weight, int reps, int type) {
@@ -51,5 +50,42 @@ public class Utils {
         InputMethodManager imm = (InputMethodManager) context.getSystemService(Service.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(editText.getWindowToken(), 0);
         editText.clearFocus();
+    }
+
+    public static String[][] getNormsByType(int type, Context context) {
+        String[] data = null;
+        if (!Config.getYourGender()) {
+            switch (type) {
+                case 0:
+                    data = context.getResources().getStringArray(R.array.ipf_norms_male);
+                    break;
+                case 1:
+                    data = context.getResources().getStringArray(R.array.wpc_norms_male);
+                    break;
+                case 2:
+                    data = context.getResources().getStringArray(R.array.awpc_norms_male);
+                    break;
+            }
+        } else {
+            switch (type) {
+                case 0:
+                    data = context.getResources().getStringArray(R.array.ipf_norms_female);
+                    break;
+                case 1:
+                    data = context.getResources().getStringArray(R.array.wpc_norms_female);
+                    break;
+                case 2:
+                    data = context.getResources().getStringArray(R.array.awpc_norms_female);
+                    break;
+            }
+        }
+
+        assert data != null;
+        String[][] normsData = new String[data.length][data.length];
+        for (int i = 0; i < data.length; i++) {
+            normsData[i] = data[i].split(" ");
+        }
+
+        return normsData;
     }
 }

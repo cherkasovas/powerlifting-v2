@@ -21,24 +21,24 @@ import static android.view.View.OnClickListener;
 
 public class SettingsFragment extends Fragment {
 
-    private EditText yourWeight;
+    private EditText yourWeightText;
     private Spinner priorityFederation;
     private CheckBox isExtended;
 
     private OnClickListener yourWeightListener = new OnClickListener() {
         @Override
         public void onClick(View v) {
-            yourWeight.requestFocus();
-            yourWeight.dispatchTouchEvent(MotionEvent.obtain(SystemClock.uptimeMillis(), SystemClock.uptimeMillis(), MotionEvent.ACTION_DOWN, 0, 0, 0));
-            yourWeight.dispatchTouchEvent(MotionEvent.obtain(SystemClock.uptimeMillis(), SystemClock.uptimeMillis(), MotionEvent.ACTION_UP, 0, 0, 0));
-            yourWeight.setSelection(yourWeight.getText().length());
+            yourWeightText.requestFocus();
+            yourWeightText.dispatchTouchEvent(MotionEvent.obtain(SystemClock.uptimeMillis(), SystemClock.uptimeMillis(), MotionEvent.ACTION_DOWN, 0, 0, 0));
+            yourWeightText.dispatchTouchEvent(MotionEvent.obtain(SystemClock.uptimeMillis(), SystemClock.uptimeMillis(), MotionEvent.ACTION_UP, 0, 0, 0));
+            yourWeightText.setSelection(yourWeightText.getText().length());
         }
     };
 
     private OnClickListener listener = new OnClickListener() {
         @Override
         public void onClick(View v) {
-            Utils.hideKeyBoard(getActivity(), yourWeight);
+            Utils.hideKeyBoard(getActivity(), yourWeightText);
             View view = ((ViewGroup) v).getChildAt(1);
             view.requestFocus();
             view.performClick();
@@ -50,8 +50,8 @@ public class SettingsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.settings_fragment, null);
 
-        yourWeight = (EditText) view.findViewById(R.id.your_weight);
-        yourWeight.setText(Float.toString(Config.getYourWeight()));
+        yourWeightText = (EditText) view.findViewById(R.id.your_weight);
+        yourWeightText.setText(Float.toString(Config.getYourWeight()));
 
         priorityFederation = (Spinner) view.findViewById(R.id.priority_federation);
         String[] priorityFederationData = getResources().getStringArray(R.array.federations_names);
@@ -79,8 +79,24 @@ public class SettingsFragment extends Fragment {
     @Override
     public void onPause() {
         super.onPause();
-        Config.setYourWeight(Float.valueOf(String.valueOf(yourWeight.getText())));
-        Config.setYourFederation(priorityFederation.getSelectedItemPosition());
+        int type = priorityFederation.getSelectedItemPosition();
+        float yourWeight = Float.valueOf(yourWeightText.getText().toString());
+
+        String norms[][] = Utils.getNormsByType(type, getActivity());
+        int weightIndex = 1;
+        float weightCategory = Float.parseFloat(norms[1][0]);
+
+        for (int i = 1; i < norms.length - 2; i++) {
+            if (Float.parseFloat(norms[i][0]) < yourWeight && yourWeight <= Float.parseFloat(norms[i + 1][0])) {
+                weightCategory = Float.parseFloat(norms[i + 1][0]);
+                weightIndex = i + 1;
+            }
+        }
+
+        Config.setYourWeightIndex(weightIndex);
+        Config.setYourWeightCategory(weightCategory);
+        Config.setYourWeight(yourWeight);
+        Config.setYourFederation(type);
         Config.setIsExpanded(isExtended.isChecked());
         Config.setYourGender(gender.isChecked());
     }

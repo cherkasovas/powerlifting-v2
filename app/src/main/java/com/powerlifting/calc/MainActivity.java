@@ -14,6 +14,7 @@ import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
+import com.crashlytics.android.Crashlytics;
 import com.google.analytics.tracking.android.EasyTracker;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
@@ -60,17 +61,18 @@ public class MainActivity extends ActionBarActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Crashlytics.start(this);
         setContentView(R.layout.activity_main);
         getSupportActionBar().setIcon(R.drawable.dumbbell);
         Config.getInstance(this);
 
-        adView = new AdView(this);
-        adView.setAdUnitId(getResources().getString(R.string.admob_publisher_id));
-        adView.setAdSize(AdSize.BANNER);
-        LinearLayout layout = (LinearLayout) findViewById(R.id.ad);
-        layout.addView(adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        adView.loadAd(adRequest);
+//        adView = new AdView(this);
+//        adView.setAdUnitId(getResources().getString(R.string.admob_publisher_id));
+//        adView.setAdSize(AdSize.BANNER);
+//        LinearLayout layout = (LinearLayout) findViewById(R.id.ad);
+//        layout.addView(adView);
+//        AdRequest adRequest = new AdRequest.Builder().build();
+//        adView.loadAd(adRequest);
 
         AppRate appRate = AppRate.build()
                 .setInstallDays(0)
@@ -127,7 +129,7 @@ public class MainActivity extends ActionBarActivity {
 
     @Override
     protected void onDestroy() {
-        adView.destroy();
+//        adView.destroy();
         Config.getInstance(this).saveAll();
         super.onDestroy();
     }
@@ -140,14 +142,14 @@ public class MainActivity extends ActionBarActivity {
 
     @Override
     public void onPause() {
-        adView.pause();
+//        adView.pause();
         super.onPause();
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        adView.resume();
+//        adView.resume();
     }
 
     @Override

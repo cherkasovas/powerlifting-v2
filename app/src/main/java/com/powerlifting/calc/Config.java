@@ -18,6 +18,8 @@ public class Config {
     private final static String YOUR_GENDER = "your_gender";
     private final static String YOUR_FEDERATION = "your_federation";
     private final static String IS_EXPAND = "is_expand";
+    private final static String YOUR_WEIGHT_CATEGORY = "your_weight_category";
+    private static final String YOUR_WEIGHT_INDEX = "your_weight_index";
 
     private static float pressWeight;
     private static float deadliftWeight;
@@ -35,6 +37,8 @@ public class Config {
     private static Config instance;
     private Context context;
     private static int menuItem = 0;
+    private static float yourWeightCategory;
+    private static int yourWeightIndex;
 
     public Config(Context context) {
         this.context = context;
@@ -172,6 +176,26 @@ public class Config {
         Config.isExpanded = isExpanded;
     }
 
+    public static void setYourWeightCategory(float yourWeightCategory) {
+        Config.yourWeightCategory = yourWeightCategory;
+    }
+
+    public static float getYourWeightCategory() {
+        return yourWeightCategory;
+    }
+
+    public static void setYourWeightIndex(int yourWeightIndex) {
+        Config.yourWeightIndex = yourWeightIndex;
+    }
+
+    public static int getYourWeightIndex() {
+        if (yourWeightIndex != 0) {
+            return yourWeightIndex;
+        } else {
+            return 1;
+        }
+    }
+
     private void init() {
         pressWeight = Utils.loadVal(BENCH_PRESS, context);
         squatWeight = Utils.loadVal(SQUAT, context);
@@ -185,6 +209,8 @@ public class Config {
         isExpanded = getBoolean(Utils.loadVal(IS_EXPAND, context));
         yourFederation = (int) Utils.loadVal(YOUR_FEDERATION, context);
         yourGender = getBoolean(Utils.loadVal(YOUR_GENDER, context));
+        yourWeightCategory = Utils.loadVal(YOUR_WEIGHT_CATEGORY, context);
+        yourWeightIndex = (int) Utils.loadVal(YOUR_WEIGHT_INDEX, context);
     }
 
     private boolean getBoolean(float value) {
@@ -212,6 +238,8 @@ public class Config {
         Utils.saveVal(IS_EXPAND, getInt(isExpanded), context);
         Utils.saveVal(YOUR_FEDERATION, yourFederation, context);
         Utils.saveVal(YOUR_GENDER, getInt(yourGender), context);
+        Utils.saveVal(YOUR_WEIGHT_CATEGORY, yourWeightCategory, context);
+        Utils.saveVal(YOUR_WEIGHT_INDEX, yourWeightIndex, context);
     }
 
     public void setWeightAndRepsByType(float weight, int reps, int type) {

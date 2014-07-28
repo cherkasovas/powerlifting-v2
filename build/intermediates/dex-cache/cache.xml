@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pre-dex-items>
+
+    <item
+        dex="/home/user/AndroidStudioProjects/powerlifting-v2/app/build/intermediates/pre-dexed/release/classes-b8f22e37774ba37fef4aff41dbc9b17d19dceebc.jar"
+        jar="/home/user/AndroidStudioProjects/powerlifting-v2/app/build/intermediates/exploded-aar/powerlifting-v2/EdgeEffectOverride/unspecified/classes.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="35ffb4894d6f237ca737d92ddfba8adea6ea2613"/>
+    <item
+        dex="/home/user/AndroidStudioProjects/powerlifting-v2/app/build/intermediates/pre-dexed/release/classes-9693d7128e6b2a07265adae4fc04c500cf2fce46.jar"
+        jar="/home/user/AndroidStudioProjects/powerlifting-v2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/19.1.0/classes.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="3499ceba05ca1f6037c6a2fad73df8f636224a28"/>
+    <item
+        dex="/home/user/AndroidStudioProjects/powerlifting-v2/app/build/intermediates/pre-dexed/release/libGoogleAnalyticsServices-f11924ee699675e15230700a972b8d03869a75cc.jar"
+        jar="/home/user/AndroidStudioProjects/powerlifting-v2/app/src/libs/libGoogleAnalyticsServices.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="db1e65d9e3ee616f871cb23120fbea8f18ad3e4c"/>
+    <item
+        dex="/home/user/AndroidStudioProjects/powerlifting-v2/app/build/intermediates/pre-dexed/release/classes-a8079d1a6d0371aa031c24c365f70ff7872ea162.jar"
+        jar="/home/user/AndroidStudioProjects/powerlifting-v2/app/build/intermediates/exploded-aar/powerlifting-v2/tableFixHeaders/unspecified/classes.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="857cfa4b005a5a196e2f0b554fc95821afa250c2"/>
+    <item
+        dex="/home/user/AndroidStudioProjects/powerlifting-v2/app/build/intermediates/pre-dexed/release/classes-7990cc02c4edc4ebea3fd6b098f9ed2bc8a35f0f.jar"
+        jar="/home/user/AndroidStudioProjects/powerlifting-v2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/5.0.77/classes.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="b6a82434c1eca686607867cd906bcc80ed987837"/>
+    <item
+        dex="/home/user/AndroidStudioProjects/powerlifting-v2/app/build/intermediates/pre-dexed/debug/crashlytics-1.1.11-c62c919f2b02889b41dc720d9d194053aa7b2d98.jar"
+        jar="/home/user/.gradle/caches/modules-2/files-2.1/com.crashlytics.android/crashlytics/1.1.11/b8189e9eef2f07fae743e05d7fe7e69daebe98d1/crashlytics-1.1.11.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="b8189e9eef2f07fae743e05d7fe7e69daebe98d1"/>
+    <item
+        dex="/home/user/AndroidStudioProjects/powerlifting-v2/app/build/intermediates/pre-dexed/release/support-v4-19.1.0-227da88e284d43e62b91bb2e60395454aac96154.jar"
+        jar="/home/user/android-studio/sdk/extras/android/m2repository/com/android/support/support-v4/19.1.0/support-v4-19.1.0.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="85f201b380937e61a9dce6ca90ccf6872abbfb67"/>
+    <item
+        dex="/home/user/AndroidStudioProjects/powerlifting-v2/app/build/intermediates/pre-dexed/release/classes-cd3ae14950cc4dc840653fbddefe991eebc7a3e2.jar"
+        jar="/home/user/AndroidStudioProjects/powerlifting-v2/app/build/intermediates/exploded-aar/com.github.hotchemi/android-rate/0.3.1/classes.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="9ebfb43b0a2e0623f4701b7dea08e99a5f0edb88"/>
+
+</pre-dex-items>
