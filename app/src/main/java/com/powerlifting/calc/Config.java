@@ -1,6 +1,7 @@
 package com.powerlifting.calc;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 
 public class Config {
     public static final float[][] COEFFICIENTS = {
@@ -43,7 +44,6 @@ public class Config {
 
     public Config(Context context) {
         this.context = context;
-
         this.init();
     }
 
@@ -197,7 +197,7 @@ public class Config {
         }
     }
 
-    private void init() {
+    public void init() {
         pressWeight = Utils.loadVal(BENCH_PRESS, context);
         squatWeight = Utils.loadVal(SQUAT, context);
         deadliftWeight = Utils.loadVal(DEADLIFT, context);

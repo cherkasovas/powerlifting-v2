@@ -1,5 +1,9 @@
 package com.powerlifting.calc.fragments;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.support.v4.app.Fragment;
@@ -14,6 +18,7 @@ import android.widget.Spinner;
 import android.widget.ToggleButton;
 
 import com.powerlifting.calc.Config;
+import com.powerlifting.calc.MainActivity;
 import com.powerlifting.calc.R;
 import com.powerlifting.calc.Utils;
 
@@ -72,6 +77,18 @@ public class SettingsFragment extends Fragment {
         view.findViewById(R.id.priority_federation_settings).setOnClickListener(listener);
         view.findViewById(R.id.is_extended_settings).setOnClickListener(listener);
         view.findViewById(R.id.gender_settings).setOnClickListener(listener);
+        view.findViewById(R.id.reset).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Utils.reset(getActivity());
+                Intent mStartActivity = new Intent(getActivity(), MainActivity.class);
+                int mPendingIntentId = 123456;
+                PendingIntent mPendingIntent = PendingIntent.getActivity(getActivity(), mPendingIntentId, mStartActivity, PendingIntent.FLAG_CANCEL_CURRENT);
+                AlarmManager mgr = (AlarmManager) getActivity().getSystemService(Context.ALARM_SERVICE);
+                mgr.set(AlarmManager.RTC, System.currentTimeMillis() + 300, mPendingIntent);
+                System.exit(0);
+            }
+        });
 
         return view;
     }

@@ -109,4 +109,21 @@
         android:layout_height="1dp"
         android:background="#ccc" />
 
+    <RelativeLayout
+        android:id="@+id/reset"
+        android:layout_width="match_parent"
+        android:layout_height="70dp">
+
+        <TextView
+            style="@style/settings_text_view"
+            android:gravity="center_vertical"
+            android:text="@string/reset" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ccc" />
+
 </LinearLayout>

@@ -88,4 +88,12 @@ public class Utils {
 
         return normsData;
     }
+
+    public static void reset(Context context) {
+        SharedPreferences preferences = context.getSharedPreferences("settings", 0);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.clear();
+        editor.commit();
+    }
+
 }
