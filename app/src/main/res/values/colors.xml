@@ -9,5 +9,6 @@
     <color name="red">#dd191d</color>
     <color name="nav_drawer_checked">#ff7043</color>
     <color name="r_button_pressed">#dd2c00</color>
+    <color name="nav_dr_shadow">#AA222222</color>
 
 </resources>

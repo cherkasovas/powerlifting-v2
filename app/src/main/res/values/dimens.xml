@@ -7,4 +7,5 @@
     <dimen name="table_row_width_norms_1">70.5dp</dimen>
 
     <dimen name="main_text_size">18sp</dimen>
+    <dimen name="nav_drawer_width">220dp</dimen>
 </resources>

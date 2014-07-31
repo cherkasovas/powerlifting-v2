@@ -20,6 +20,7 @@ public class Config {
     private final static String IS_EXPAND = "is_expand";
     private final static String YOUR_WEIGHT_CATEGORY = "your_weight_category";
     private static final String YOUR_WEIGHT_INDEX = "your_weight_index";
+    private static final String MENU_ITEM = "menu_item";
 
     private static float pressWeight;
     private static float deadliftWeight;
@@ -36,7 +37,7 @@ public class Config {
 
     private static Config instance;
     private Context context;
-    private static int menuItem = 0;
+    private static int menuItem;
     private static float yourWeightCategory;
     private static int yourWeightIndex;
 
@@ -211,6 +212,7 @@ public class Config {
         yourGender = getBoolean(Utils.loadVal(YOUR_GENDER, context));
         yourWeightCategory = Utils.loadVal(YOUR_WEIGHT_CATEGORY, context);
         yourWeightIndex = (int) Utils.loadVal(YOUR_WEIGHT_INDEX, context);
+        menuItem = (int) Utils.loadVal(MENU_ITEM, context);
     }
 
     private boolean getBoolean(float value) {
@@ -240,6 +242,7 @@ public class Config {
         Utils.saveVal(YOUR_GENDER, getInt(yourGender), context);
         Utils.saveVal(YOUR_WEIGHT_CATEGORY, yourWeightCategory, context);
         Utils.saveVal(YOUR_WEIGHT_INDEX, yourWeightIndex, context);
+        Utils.saveVal(MENU_ITEM, menuItem, context);
     }
 
     public void setWeightAndRepsByType(float weight, int reps, int type) {

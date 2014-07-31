@@ -34,10 +34,10 @@
 
         <ListView
             android:id="@+id/left_drawer"
-            android:layout_width="220dp"
+            android:layout_width="@dimen/nav_drawer_width"
             android:layout_height="match_parent"
-            android:layout_gravity="start"
             android:choiceMode="singleChoice"
+            android:layout_gravity="start"
             android:divider="#ccc"
             android:dividerHeight="1dp"
             android:background="@color/table_row_color_odd" />
