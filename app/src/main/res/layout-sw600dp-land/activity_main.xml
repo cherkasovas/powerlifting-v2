@@ -23,7 +23,7 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingLeft="@dimen/nav_drawer_width">
+        android:layout_marginLeft="@dimen/nav_drawer_width">
 
         <LinearLayout
             android:id="@+id/ad"

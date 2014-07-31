@@ -59,10 +59,12 @@ public class MainActivity extends ActionBarActivity {
         if (isDrawerLocked) {
             mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_OPEN);
             mDrawerLayout.setScrimColor(Color.TRANSPARENT);
+            getSupportActionBar().setHomeButtonEnabled(false);
         } else {
             mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
             mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
             mDrawerLayout.setScrimColor(getResources().getColor(R.color.nav_dr_shadow));
+            getSupportActionBar().setHomeButtonEnabled(true);
         }
         super.onPostResume();
     }
@@ -123,15 +125,11 @@ public class MainActivity extends ActionBarActivity {
             }
         };
 
-
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
         mDrawerLayout.setDrawerListener(mDrawerToggle);
-        if (isDrawerLocked) {
-            getSupportActionBar().setHomeButtonEnabled(false);
-        } else {
-            getSupportActionBar().setHomeButtonEnabled(true);
-        }
+
+        //crash protector
+        findViewById(R.id.content_frame).setOnClickListener(null);
 
         Fragment fragment = getFragmentByMenuItem(Config.getMenuItem());
         fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
