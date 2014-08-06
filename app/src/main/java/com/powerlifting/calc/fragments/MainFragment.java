@@ -36,15 +36,21 @@ public class MainFragment extends Fragment {
 
         String norms[][] = Utils.getNormsByType(Config.getYourFederation(), getActivity());
         int weightIndex = Config.getYourWeightIndex();
-        float categoryWeight = Float.parseFloat(norms[weightIndex][norms[0].length - 1]);
+        float weightCategory = Float.parseFloat(norms[weightIndex][norms[0].length - 1]);
+        int categoryIndex = 0;
 
-        for (int i = norms[0].length - 1; i > 2; i--) {
+        for (int i = norms[0].length - 1; i > 1; i--) {
             if (Float.parseFloat(norms[weightIndex][i]) <= summMax && summMax < Float.parseFloat(norms[weightIndex][i - 1])) {
-                categoryWeight = Float.parseFloat(norms[weightIndex][i - 1]);
+                weightCategory = Float.parseFloat(norms[weightIndex][i - 1]);
+                categoryIndex = i;
             }
         }
 
-        float needWeight = categoryWeight - summMax;
+        if (Float.parseFloat(norms[weightIndex][1]) <= summMax) {
+            categoryIndex = 1;
+        }
+
+        float needWeight = Utils.round(weightCategory - summMax);
         if (needWeight > 0 && summMax != 0 && weights[3] != 0) {
             for (int i = 0; i < 3; i++) {
                 needWeights[i] = Utils.round(needWeight * (weights[i] / summMax));
@@ -58,12 +64,22 @@ public class MainFragment extends Fragment {
             ((TextView) view.findViewById(R.id.summ_need)).setText(Float.toString(needWeight));
 
         } else {
-            String none = Character.toString('∞');
-            ((TextView) view.findViewById(R.id.bench_press_need)).setText(none);
-            ((TextView) view.findViewById(R.id.squat_need)).setText(none);
-            ((TextView) view.findViewById(R.id.deadlift_need)).setText(none);
-            ((TextView) view.findViewById(R.id.summ_need)).setText(none);
+            String inf = Character.toString('∞');
+            ((TextView) view.findViewById(R.id.bench_press_need)).setText(inf);
+            ((TextView) view.findViewById(R.id.squat_need)).setText(inf);
+            ((TextView) view.findViewById(R.id.deadlift_need)).setText(inf);
+            ((TextView) view.findViewById(R.id.summ_need)).setText(inf);
         }
+
+        String[] categories = getResources().getStringArray(R.array.categories);
+        String[] federations = getResources().getStringArray(R.array.federations_names);
+        String currentCategory;
+        if (categoryIndex != 0) {
+            currentCategory = categories[categoryIndex] + " " + federations[Config.getYourFederation()];
+        } else {
+            currentCategory = getResources().getString(R.string.none_category);
+        }
+        ((TextView) view.findViewById(R.id.current_category)).setText(currentCategory);
 
         return view;
     }
