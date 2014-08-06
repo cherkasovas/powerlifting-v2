@@ -121,6 +121,16 @@
         <item>90+ 520 460 400 360 320 280 240</item>
     </array>
 
+    <string-array name="categories">
+        <item>*</item>
+        <item>MSIC</item>
+        <item>MS</item>
+        <item>CMS</item>
+        <item>1 adult</item>
+        <item>2 adult</item>
+        <item>3 adult</item>
+    </string-array>
+
     <string name="admob_publisher_id">a153ce1b84a0597</string>
     <string name="app_name">Powerlifting</string>
     <string name="menu_icon">menu_icon</string>
@@ -148,16 +158,14 @@
     <string name="wpc">WPC</string>
     <string name="awpc">AWPC</string>
 
-    <string name="msmk">MSIC</string>
-    <string name="ms">MS</string>
-    <string name="kms">CMS</string>
-
     <string name="priority_federation">Priority federation</string>
     <string name="extended_percent">Extended partition in calc</string>
     <string name="gender">Gender</string>
     <string name="male">Male</string>
     <string name="female">Female</string>
     <string name="reset">Reset</string>
+    <string name="current_category">Current category:</string>
+    <string name="none_category">-</string>
 
 
 </resources>
