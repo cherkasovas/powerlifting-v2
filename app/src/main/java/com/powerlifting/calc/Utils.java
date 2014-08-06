@@ -8,6 +8,8 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
 public class Utils {
+    private final static int OFFSET = 4;
+    private final static int PERCENT_STEP = 5;
 
     public static float round(float val) {
         float ans = Math.round(val * 10);
@@ -30,15 +32,30 @@ public class Utils {
     }
 
     public static float[][] calculateWeights(float weight, int reps, int type) {
-        float[][] weights = new float[2][10];
-
         float maxWeight = getMaxWeightByType(weight, reps, type);
         float percent = maxWeight / 100;
+        float[][] weights;
 
-        for (int i = 9; i >= 0; i--) {
-            weights[0][i] = Utils.round(maxWeight / Config.COEFFICIENTS[type][i]);
-            weights[1][i] = Utils.round(weights[0][i] / percent);
+        if (!Config.getIsExtended()) {
+            weights = new float[2][10];
+            for (int i = 9; i >= 0; i--) {
+                weights[0][i] = Utils.round(maxWeight / Config.COEFFICIENTS[type][i]);
+                weights[1][i] = Utils.round(weights[0][i] / percent);
+            }
+        } else {
+            weights = new float[2][10 + OFFSET];
+            for (int i = 0; i < OFFSET; i++) {
+                weights[1][i] = Utils.round(100 + ((OFFSET - i) * PERCENT_STEP));
+                weights[0][i] = Utils.round(maxWeight * (weights[1][i] / 100));
+            }
+
+            for (int i = 13; i >= OFFSET; i--) {
+                weights[0][i] = Utils.round(maxWeight / Config.COEFFICIENTS[type][i - OFFSET]);
+                weights[1][i] = Utils.round(weights[0][i] / percent);
+            }
         }
+
+
         return weights;
     }
 
