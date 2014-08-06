@@ -28,7 +28,7 @@ public class MainFragment extends Fragment {
         ((TextView) view.findViewById(R.id.your_weight_max)).setText(Float.toString(weights[3]));
 
         float weightDelta = Config.getYourWeightCategory() - weights[3];
-        if (weightDelta > 0 && weights[3] != 0) {
+        if (weightDelta >= 0 && weights[3] != 0) {
             ((TextView) view.findViewById(R.id.your_weight_need)).setText(Float.toString(Utils.round(weightDelta)));
         } else {
             ((TextView) view.findViewById(R.id.your_weight_need)).setText(Character.toString('∞'));
@@ -46,10 +46,6 @@ public class MainFragment extends Fragment {
             }
         }
 
-        if (Float.parseFloat(norms[weightIndex][1]) <= summMax) {
-            categoryIndex = 1;
-        }
-
         float needWeight = Utils.round(weightCategory - summMax);
         if (needWeight > 0 && summMax != 0 && weights[3] != 0) {
             for (int i = 0; i < 3; i++) {
@@ -57,18 +53,20 @@ public class MainFragment extends Fragment {
             }
 
             needWeights[2] += Utils.round(needWeight - (needWeights[0] + needWeights[1] + needWeights[2]));
-
             ((TextView) view.findViewById(R.id.bench_press_need)).setText(Float.toString(needWeights[0]));
             ((TextView) view.findViewById(R.id.squat_need)).setText(Float.toString(needWeights[1]));
             ((TextView) view.findViewById(R.id.deadlift_need)).setText(Float.toString(needWeights[2]));
             ((TextView) view.findViewById(R.id.summ_need)).setText(Float.toString(needWeight));
-
         } else {
             String inf = Character.toString('∞');
             ((TextView) view.findViewById(R.id.bench_press_need)).setText(inf);
             ((TextView) view.findViewById(R.id.squat_need)).setText(inf);
             ((TextView) view.findViewById(R.id.deadlift_need)).setText(inf);
             ((TextView) view.findViewById(R.id.summ_need)).setText(inf);
+        }
+
+        if (Float.parseFloat(norms[weightIndex][1]) <= summMax) {
+            categoryIndex = 1;
         }
 
         String[] categories = getResources().getStringArray(R.array.categories);

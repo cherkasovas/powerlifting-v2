@@ -193,7 +193,7 @@ public class Config {
         if (yourWeightIndex != 0) {
             return yourWeightIndex;
         } else {
-            return 1;
+            return 5;
         }
     }
 

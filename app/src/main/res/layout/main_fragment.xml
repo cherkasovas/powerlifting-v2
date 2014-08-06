@@ -18,6 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/maximum"
+        android:layout_above="@+id/current_category_layout"
         android:scrollbars="none">
 
         <TableLayout
@@ -129,6 +130,7 @@
     </ScrollView>
 
     <LinearLayout
+        android:id="@+id/current_category_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
