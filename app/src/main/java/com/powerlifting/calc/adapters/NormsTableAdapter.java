@@ -37,7 +37,7 @@ public class NormsTableAdapter extends BaseTableAdapter {
         View item = inflater.inflate(R.layout.norms_table_item, null);
         TextView textView = (TextView) item.findViewById(R.id.weight_text);
 
-        if (!data[row + 1][column + 1].equals("*")) {
+        if (!data[row + 1][column + 1].equals("0")) {
             textView.setText(data[row + 1][column + 1]);
         }
 

@@ -2,11 +2,13 @@ package com.powerlifting.calc.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.powerlifting.calc.CategoryManager;
 import com.powerlifting.calc.Config;
 import com.powerlifting.calc.R;
 import com.powerlifting.calc.Utils;
@@ -26,6 +28,12 @@ public class MainFragment extends Fragment {
         ((TextView) view.findViewById(R.id.deadlift_max)).setText(Float.toString(weights[2]));
         ((TextView) view.findViewById(R.id.summ_max)).setText(Float.toString(Utils.round(summMax)));
         ((TextView) view.findViewById(R.id.your_weight_max)).setText(Float.toString(weights[3]));
+
+
+        CategoryManager categoryManager = new CategoryManager(getActivity());
+        Log.d("asd", "" + categoryManager.getYourWeightCategory());
+
+
 
         float weightDelta = Config.getYourWeightCategory() - weights[3];
         if (weightDelta >= 0 && weights[3] != 0) {
@@ -55,7 +63,7 @@ public class MainFragment extends Fragment {
             needWeights[2] += Utils.round(needWeight - (needWeights[0] + needWeights[1] + needWeights[2]));
             ((TextView) view.findViewById(R.id.bench_press_need)).setText(Float.toString(needWeights[0]));
             ((TextView) view.findViewById(R.id.squat_need)).setText(Float.toString(needWeights[1]));
-            ((TextView) view.findViewById(R.id.deadlift_need)).setText(Float.toString(needWeights[2]));
+            ((TextView) view.findViewById(R.id.deadlift_need)).setText(Float.toString(Utils.round(needWeights[2])));
             ((TextView) view.findViewById(R.id.summ_need)).setText(Float.toString(needWeight));
         } else {
             String inf = Character.toString('∞');
@@ -72,12 +80,12 @@ public class MainFragment extends Fragment {
         String[] categories = getResources().getStringArray(R.array.categories);
         String[] federations = getResources().getStringArray(R.array.federations_names);
         String currentCategory;
-        if (categoryIndex != 0) {
-            currentCategory = categories[categoryIndex] + " " + federations[Config.getYourFederation()];
-        } else {
-            currentCategory = getResources().getString(R.string.none_category);
-        }
-        ((TextView) view.findViewById(R.id.current_category)).setText(currentCategory);
+//        if (categoryIndex != 0) {
+//            currentCategory = categories[categoryIndex] + " " + federations[Config.getYourFederation()];
+//        } else {
+//            currentCategory = getResources().getString(R.string.none_category);
+//        }
+//        ((TextView) view.findViewById(R.id.current_category)).setText(currentCategory);
 
         return view;
     }

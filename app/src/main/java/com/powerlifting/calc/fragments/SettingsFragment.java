@@ -81,16 +81,20 @@ public class SettingsFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Utils.reset(getActivity());
-                Intent mStartActivity = new Intent(getActivity(), MainActivity.class);
-                int mPendingIntentId = 123456;
-                PendingIntent mPendingIntent = PendingIntent.getActivity(getActivity(), mPendingIntentId, mStartActivity, PendingIntent.FLAG_CANCEL_CURRENT);
-                AlarmManager mgr = (AlarmManager) getActivity().getSystemService(Context.ALARM_SERVICE);
-                mgr.set(AlarmManager.RTC, System.currentTimeMillis() + 300, mPendingIntent);
-                System.exit(0);
+                restartApplication(300);
             }
         });
 
         return view;
+    }
+
+    private void restartApplication(int millis) {
+        Intent mStartActivity = new Intent(getActivity(), MainActivity.class);
+        PendingIntent pendingIntent = PendingIntent.getActivity(getActivity(), 123456,
+                mStartActivity, PendingIntent.FLAG_CANCEL_CURRENT);
+        AlarmManager mgr = (AlarmManager) getActivity().getSystemService(Context.ALARM_SERVICE);
+        mgr.set(AlarmManager.RTC, System.currentTimeMillis() + millis, pendingIntent);
+        System.exit(0);
     }
 
     @Override
