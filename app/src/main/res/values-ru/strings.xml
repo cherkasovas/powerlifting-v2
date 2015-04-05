@@ -6,7 +6,7 @@
         <item>@string/calculator</item>
         <item>@string/norms</item>
         <item>@string/settings</item>
-        <item>@string/help</item>
+        <!--<item>@string/help</item>-->
     </string-array>
 
     <array name="navigation_drawer_icons">
@@ -14,7 +14,7 @@
         <item>@drawable/calculate</item>
         <item>@drawable/norms</item>
         <item>@drawable/settings</item>
-        <item>@drawable/help</item>
+        <!--<item>@drawable/help</item>-->
     </array>
 
     <array name="navigation_drawer_icons_checked">
@@ -22,7 +22,7 @@
         <item>@drawable/calculate_checked</item>
         <item>@drawable/norms_checked</item>
         <item>@drawable/settings_checked</item>
-        <item>@drawable/help_checked</item>
+        <!--<item>@drawable/help_checked</item>-->
     </array>
 
     <string-array name="federations_names">
@@ -31,13 +31,28 @@
         <item>@string/awpc</item>
     </string-array>
 
+    <string-array name="fonts_names">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="federations">
+        <item>ipf</item>
+        <item>wpc</item>
+        <item>awpc</item>
+    </string-array>
+
+
     <string-array name="gender">
         <item>@string/male</item>
         <item>@string/female</item>
     </string-array>
 
     <array name="ipf_norms_male">
-        <item>53.0 0 0 410.0 325.0 282.5 260.0</item>
+        <item>0 0 0 0 0 0 0 0</item>
+        <item>53.0 0 0 410.0 325.0 282.5 260.0 0</item>
         <item>59.0 625.0 570.0 455.0 362.5 315.0 290.0 0</item>
         <item>66.0 700.0 635.0 510.0 402.5 350.0 320.0 0</item>
         <item>74.0 770.0 695.0 537.5 440.0 385.0 352.5 0</item>
@@ -45,10 +60,11 @@
         <item>93.0 880.0 787.5 610.0 520.0 465.0 412.5 0</item>
         <item>105.0 920.0 815.0 645.0 552.5 500.0 460.0 0</item>
         <item>120.0 955.0 835.0 687.5 600.0 530.0 497.5 0</item>
-        <item>120+ 980.0 860.0 735.0 617.5 545.0 510.0 0</item>
+        <item>120 980.0 860.0 735.0 617.5 545.0 510.0 0</item>
     </array>
 
     <array name="wpc_norms_male">
+        <item>0 0 0 0 0 0 0 0</item>
         <item>52 470 407.5 367.5 327.5 285 245 0</item>
         <item>56 510 442.5 400 355 310 265 0</item>
         <item>60 547.5 475 427.5 380 332.5 285 0</item>
@@ -60,10 +76,11 @@
         <item>110 817.5 710 640 567.5 497.5 425 0</item>
         <item>125 852.5 742.5 667.5 592.5 520 445 0</item>
         <item>140 880 765 690 612.5 535 460 0</item>
-        <item>140+ 902.5 785 705 627.5 550 470 0</item>
+        <item>140 902.5 785 705 627.5 550 470 0</item>
     </array>
 
     <array name="awpc_norms_male">
+        <item>0 0 0 0 0 0 0 0</item>
         <item>52 432.5 377.5 340 302.5 265 227.5 0</item>
         <item>56 470 410 367.5 327.5 287.5 245 0</item>
         <item>60 505 440 395 350 307.5 262.5 0</item>
@@ -75,10 +92,11 @@
         <item>110 752.5 655 590 525 457.5 392.5 0</item>
         <item>125 787.5 685 617.5 547.5 480 410 0</item>
         <item>140 812.5 707.5 635 565 495 425 0</item>
-        <item>140+ 832.5 725 652.5 580 507.5 435 0</item>
+        <item>140 832.5 725 652.5 580 507.5 435 0</item>
     </array>
 
     <array name="ipf_norms_female">
+        <item>0 0 0 0 0 0 0 0</item>
         <item>43.0 0 0 242.5 175.0 150.0 137.5 0</item>
         <item>47.0 367.5 297.5 262.5 190.0 165.0 150.0 0</item>
         <item>52.0 405.0 325.0 290.0 210.0 182.5 167.5 0</item>
@@ -86,10 +104,11 @@
         <item>63.0 475.0 385.0 337.5 252.5 220.0 202.5 0</item>
         <item>72.0 507.5 412.5 367.5 285.0 247.5 227.5 0</item>
         <item>84.0 537.5 447.5 405.0 327.5 285.0 260.0 0</item>
-        <item>84+ 552.5 475.0 422.5 352.5 320.0 285.0 0</item>
+        <item>84 552.5 475.0 422.5 352.5 320.0 285.0 0</item>
     </array>
 
     <array name="wpc_norms_female">
+        <item>0 0 0 0 0 0 0 0</item>
         <item>44 300 260 235 210 182.5 157.5 0</item>
         <item>48 330 287.5 260 230 202.5 172.5 0</item>
         <item>52 360 312.5 282.5 250 220 187.5 0</item>
@@ -99,10 +118,11 @@
         <item>75 482.5 420 377.5 335 292.5 252.5 0</item>
         <item>82.5 507.5 442.5 397.5 352.5 310 265 0</item>
         <item>90 527.5 460 415 367.5 322.5 275 0</item>
-        <item>90+ 610 540 470 422.5 375 330 282.5 0</item>
+        <item>90 610 540 470 422.5 375 330 282.5 0</item>
     </array>
 
     <array name="awpc_norms_female">
+        <item>0 0 0 0 0 0 0 0</item>
         <item>44 255 222.5 200 177.5 155 132.5 0</item>
         <item>48 282.5 245 220 195 172.5 147.5 0</item>
         <item>52 345 305 265 240 212.5 185 160 0</item>
@@ -112,8 +132,19 @@
         <item>75 410 355 320 285 250 212.5 0</item>
         <item>82.5 432.5 375 337.5 300 262.5 225 0</item>
         <item>90 450 390 352.5 312.5 272.5 235 0</item>
-        <item>90+ 520 460 400 360 320 280 240 0</item>
+        <item>90 520 460 400 360 320 280 240 0</item>
     </array>
+
+    <string-array name="categories">
+        <item> </item>
+        <item>МСМК</item>
+        <item>МС</item>
+        <item>КМС</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item> </item>
+    </string-array>
 
     <string name="admob_publisher_id">a153ce1b84a0597</string>
     <string name="app_name">Powerlifting</string>
@@ -142,14 +173,15 @@
     <string name="wpc">WPC</string>
     <string name="awpc">AWPC</string>
 
-    <string name="msmk">MSIC</string>
-    <string name="ms">MS</string>
-    <string name="kms">CMS</string>
-
     <string name="priority_federation">Приоритетная федерация</string>
-    <string name="extended_percent">Расширенное разбиение на %</string>
+    <string name="extended_percent">Extended partition in calc</string>
     <string name="gender">Пол</string>
     <string name="male">Male</string>
     <string name="female">Female</string>
+    <string name="reset">Сброс</string>
+    <string name="current_category">Current category:</string>
+    <string name="none_category">-</string>
+    <string name="custom_font">Шрифт</string>
+
 
 </resources>

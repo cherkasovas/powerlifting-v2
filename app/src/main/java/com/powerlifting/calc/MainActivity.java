@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.powerlifting.calc.adapters.NavigationDrawerAdapter;
 import com.powerlifting.calc.fragments.CalcFragment;
@@ -25,10 +26,8 @@ public class MainActivity extends ActionBarActivity {
     private ListView mNavigationDrawerMenu;
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mDrawerToggle;
-    //    private AdView adView;
     private FragmentManager fragmentManager = getSupportFragmentManager();
     private Boolean isDrawerLocked;
-
     private AdapterView.OnItemClickListener mMenuClickListener = new AdapterView.OnItemClickListener() {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -53,6 +52,12 @@ public class MainActivity extends ActionBarActivity {
         }
 
     };
+    private OnFontChangeListener onFontChangeListener = new OnFontChangeListener() {
+        @Override
+        public void onFontChange() {
+            setCustomFontTitleBar();
+        }
+    };
 
     @Override
     protected void onPostResume() {
@@ -72,7 +77,6 @@ public class MainActivity extends ActionBarActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        Crashlytics.start(this);
         setContentView(R.layout.activity_main);
         getSupportActionBar().setIcon(R.drawable.dumbbell);
         Config.getInstance(this);
@@ -81,23 +85,7 @@ public class MainActivity extends ActionBarActivity {
 
         isDrawerLocked = getResources().getBoolean(R.bool.tablet_land);
 
-
-//        adView = new AdView(this);
-//        adView.setAdUnitId(getResources().getString(R.string.admob_publisher_id));
-//        adView.setAdSize(AdSize.BANNER);
-//        LinearLayout layout = (LinearLayout) findViewById(R.id.ad);
-//        layout.addView(adView);
-//        AdRequest adRequest = new AdRequest.Builder().build();
-//        adView.loadAd(adRequest);
-
-//        AppRate appRate = AppRate.build()
-//                .setInstallDays(0)
-//                .setLaunchTimes(3)
-//                .setRemindInterval(2)
-//                .setShowNeutralButton(true)
-//                .setDebug(false).monitor(this);
-//
-//        appRate.showRateDialogIfMeetsConditions(this);
+        setCustomFontTitleBar();
 
         String[] mNavigationDrawerMenuTitles = getResources().getStringArray(R.array.navigation_drawer_menu_titles);
         TypedArray mNavigationDrawerMenuIcons = getResources().obtainTypedArray(R.array.navigation_drawer_icons);
@@ -147,35 +135,21 @@ public class MainActivity extends ActionBarActivity {
     }
 
     @Override
-    protected void onDestroy() {
-//        adView.destroy();
-        super.onDestroy();
-    }
-
-
-    @Override
-    public void onStart() {
-        super.onStart();
-//        EasyTracker.getInstance(this).activityStart(this);
-    }
-
-    @Override
-    public void onPause() {
-//        adView.pause();
-        super.onPause();
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-//        adView.resume();
-    }
-
-    @Override
     public void onStop() {
         Config.getInstance(this).saveAll();
         super.onStop();
-//        EasyTracker.getInstance(this).activityStop(this);
+    }
+
+    public void setCustomFontTitleBar() {
+        int fontType = Config.getFontType();
+        if (fontType != 0) {
+            int titleId = getResources().getIdentifier("action_bar_title", "id", "android");
+            TextView titleBarTextView = (TextView) findViewById(titleId);
+            String fontName = Integer.toString(fontType) + ".ttf";
+            if (titleBarTextView != null) {
+                titleBarTextView.setTypeface(TypeFaceProvider.getTypeFace(this, fontName));
+            }
+        }
     }
 
     private void setFragment(int position) {
@@ -198,6 +172,7 @@ public class MainActivity extends ActionBarActivity {
                 break;
             case 3:
                 fragment = new SettingsFragment();
+                ((SettingsFragment) fragment).setOnFontChangeListener(onFontChangeListener);
                 break;
             case 4:
                 fragment = new HelpFragment();

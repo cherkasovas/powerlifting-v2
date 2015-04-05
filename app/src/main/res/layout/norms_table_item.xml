@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:background="@color/table_border_color">
 
-    <TextView
+    <com.powerlifting.calc.views.CustomFontTextView
         android:id="@+id/weight_text"
         style="@style/Norms" />
 

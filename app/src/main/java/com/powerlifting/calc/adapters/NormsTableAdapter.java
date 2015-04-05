@@ -15,10 +15,14 @@ public class NormsTableAdapter extends BaseTableAdapter {
 
     private final Context context;
     private final String[][] data;
+    private final String[] categoryNames;
+    private LayoutInflater inflater;
 
     public NormsTableAdapter(Context context, int type) {
         this.context = context;
         data = Utils.getNormsByType(type, context);
+        categoryNames = Utils.getCategoryNames(context);
+        inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
     @Override
@@ -28,17 +32,24 @@ public class NormsTableAdapter extends BaseTableAdapter {
 
     @Override
     public int getColumnCount() {
-        return data[0].length - 1;
+        return data[0].length - 2;
     }
 
     @Override
     public View getView(int row, int column, View convertView, ViewGroup parent) {
-        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View item = inflater.inflate(R.layout.norms_table_item, null);
         TextView textView = (TextView) item.findViewById(R.id.weight_text);
 
         if (!data[row + 1][column + 1].equals("0")) {
             textView.setText(data[row + 1][column + 1]);
+        }
+
+        if (row == -1) {
+            textView.setText(categoryNames[column + 1]);
+        }
+
+        if (row == (getRowCount() - 1) && column == -1) {
+            textView.setText(textView.getText() + "+");
         }
 
         if (row == -1) {

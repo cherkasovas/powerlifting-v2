@@ -106,6 +106,10 @@ public class Utils {
         return normsData;
     }
 
+    public static String[] getCategoryNames(Context context) {
+        return context.getResources().getStringArray(R.array.categories);
+    }
+
     public static void reset(Context context) {
         SharedPreferences preferences = context.getSharedPreferences("settings", 0);
         SharedPreferences.Editor editor = preferences.edit();

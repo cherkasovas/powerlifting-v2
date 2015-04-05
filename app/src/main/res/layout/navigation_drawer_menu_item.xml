@@ -1,21 +1,25 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:layout_width="match_parent"
+    android:paddingLeft="6dp"
     android:layout_height="@dimen/table_row_height">
 
     <ImageView
         android:id="@+id/menu_icon"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:scaleType="center"
-        android:layout_margin="3dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_gravity="center_vertical"
         android:contentDescription="@string/menu_icon" />
 
-    <TextView
+    <com.powerlifting.calc.views.CustomFontTextView
         android:id="@+id/menu_title"
         android:textSize="@dimen/main_text_size"
+        android:gravity="center_vertical"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginLeft="6dp"
         android:layout_gravity="center_vertical"/>
 
 </LinearLayout>

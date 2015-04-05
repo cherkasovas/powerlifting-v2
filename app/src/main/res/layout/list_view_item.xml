@@ -6,16 +6,16 @@
     android:layout_height="50dp"
     android:background="@color/table_border_color">
 
-    <TextView
+    <com.powerlifting.calc.views.CustomFontTextView
         android:id="@+id/col1"
         android:layout_marginLeft="@dimen/table_border_width"
         style="@style/Main" />
 
-    <TextView
+    <com.powerlifting.calc.views.CustomFontTextView
         android:id="@+id/col2"
         style="@style/Main" />
 
-    <TextView
+    <com.powerlifting.calc.views.CustomFontTextView
         android:id="@+id/col3"
         style="@style/Main" />
 

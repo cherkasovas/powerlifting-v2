@@ -12,7 +12,7 @@
         android:layout_centerHorizontal="true"
         android:layout_margin="10dp">
 
-        <EditText
+        <com.powerlifting.calc.views.CustomFontEditText
             android:id="@+id/entered_weight"
             android:layout_width="80dp"
             android:layout_height="40dp"
@@ -69,18 +69,18 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <TextView
+            <com.powerlifting.calc.views.CustomFontTextView
                 android:id="@+id/bench_press_button"
                 style="@style/RatioGroupButtons"
                 android:background="@color/indicator"
                 android:text="@string/bench_press" />
 
-            <TextView
+            <com.powerlifting.calc.views.CustomFontTextView
                 android:id="@+id/squat_button"
                 style="@style/RatioGroupButtons"
                 android:text="@string/squat" />
 
-            <TextView
+            <com.powerlifting.calc.views.CustomFontTextView
                 android:id="@+id/deadlift_button"
                 style="@style/RatioGroupButtons"
                 android:text="@string/deadlift" />

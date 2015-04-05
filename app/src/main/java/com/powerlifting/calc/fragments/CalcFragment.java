@@ -2,13 +2,14 @@ package com.powerlifting.calc.fragments;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -18,7 +19,11 @@ import android.widget.TextView;
 import com.powerlifting.calc.Config;
 import com.powerlifting.calc.R;
 import com.powerlifting.calc.Utils;
+import com.powerlifting.calc.adapters.SpinnerAdapter;
 import com.powerlifting.calc.adapters.ViewPagerAdapter;
+
+import java.util.Arrays;
+import java.util.List;
 
 import static android.support.v4.view.ViewPager.OnPageChangeListener;
 import static android.view.View.OnClickListener;
@@ -32,9 +37,6 @@ public class CalcFragment extends Fragment {
     private Spinner spinner;
     private ViewPager viewPager;
     private int type = 0;
-    private LinearLayout indicator;
-    private TextView benchPressButton;
-
     private OnPageChangeListener onPageChangeListener = new OnPageChangeListener() {
 
         @Override
@@ -58,17 +60,23 @@ public class CalcFragment extends Fragment {
 
         }
     };
-
     private OnClickListener onClickListener = new OnClickListener() {
         @Override
         public void onClick(View v) {
-            float weight = Float.parseFloat(String.valueOf(enteredWeight.getText()));
-            Config.getInstance(activity).setWeightAndRepsByType(weight, spinner.getSelectedItemPosition(), type);
-            Utils.hideKeyBoard(activity, enteredWeight);
-            viewPager.getAdapter().notifyDataSetChanged();
+            try {
+                float weight = Float.parseFloat(String.valueOf(enteredWeight.getText()));
+                Config.getInstance(activity).setWeightAndRepsByType(weight, spinner.getSelectedItemPosition(), type);
+                Utils.hideKeyBoard(activity, enteredWeight);
+                viewPager.getAdapter().notifyDataSetChanged();
+            } catch (Exception e) {
+                Log.e("Calc", "empty weight");
+            }
+
+
         }
     };
-
+    private LinearLayout indicator;
+    private TextView benchPressButton;
     private OnClickListener ratioGroupButtonListener = new OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -114,11 +122,17 @@ public class CalcFragment extends Fragment {
         enteredWeight.setSelection(weight.length());
 
         spinner = (Spinner) view.findViewById(R.id.entered_reps);
-        ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>(activity,
-                android.R.layout.simple_spinner_item, SPINNER_DATA);
-        spinnerAdapter.setDropDownViewResource(R.layout.spiner_item);
+        List<String> spinnerData = Arrays.asList(SPINNER_DATA);
+        SpinnerAdapter spinnerAdapter = new SpinnerAdapter(getActivity(), R.layout.spiner_item,
+                spinnerData, false);
         spinner.setAdapter(spinnerAdapter);
-        spinner.setSelection(Config.getRepsByType(0));
+        //MAGIC
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                spinner.setSelection(Config.getRepsByType(0));
+            }
+        }, 50);
 
         viewPager = (ViewPager) view.findViewById(R.id.view_pager);
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(activity);

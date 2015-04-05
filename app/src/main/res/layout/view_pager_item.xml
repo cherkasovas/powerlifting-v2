@@ -14,7 +14,7 @@
         android:background="@color/table_border_color"
         android:layout_height="51dp">
 
-        <TextView
+        <com.powerlifting.calc.views.CustomFontTextView
             style="@style/Main"
             android:layout_marginLeft="@dimen/table_border_width"
             android:layout_marginTop="@dimen/table_border_width"
@@ -22,14 +22,14 @@
             android:background="@color/orange_status_bar"
             android:text="@string/reps" />
 
-        <TextView
+        <com.powerlifting.calc.views.CustomFontTextView
             style="@style/Main"
             android:layout_marginTop="@dimen/table_border_width"
             android:textColor="@android:color/white"
             android:background="@color/orange_status_bar"
             android:text="@string/weight" />
 
-        <TextView
+        <com.powerlifting.calc.views.CustomFontTextView
             style="@style/Main"
             android:layout_marginTop="@dimen/table_border_width"
             android:textColor="@android:color/white"
