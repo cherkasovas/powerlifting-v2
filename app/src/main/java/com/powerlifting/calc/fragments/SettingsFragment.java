@@ -45,6 +45,7 @@ public class SettingsFragment extends Fragment {
     private Spinner customFont;
     private CheckBox isExtended;
     private ToggleButton gender;
+    private ToggleButton measure;
     private OnFontChangeListener onFontChangeListener;
     private OnClickListener yourWeightListener = new OnClickListener() {
         @Override
@@ -100,6 +101,11 @@ public class SettingsFragment extends Fragment {
         gender = (ToggleButton) view.findViewById(R.id.gender);
         gender.setChecked(Config.getYourGender());
         view.findViewById(R.id.gender_settings).setOnClickListener(listener);
+
+        //Measure setting
+        measure = (ToggleButton) view.findViewById(R.id.measure);
+        measure.setChecked(Config.getYourMeasure());
+        view.findViewById(R.id.measure_settings).setOnClickListener(listener);
 
         //Reset setting
         view.findViewById(R.id.reset).setOnClickListener(new OnClickListener() {
@@ -159,6 +165,7 @@ public class SettingsFragment extends Fragment {
         Config.setFontType(fontType);
         Config.setIsExpanded(isExtended.isChecked());
         Config.setYourGender(gender.isChecked());
+        Config.setYourMeasure(measure.isChecked());
 
 //        int weightIndex = determineWeightCategoryIndex(yourWeight);
 

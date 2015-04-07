@@ -2,6 +2,7 @@ package com.powerlifting.calc;
 
 import android.content.res.TypedArray;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.ActionBarDrawerToggle;
@@ -9,6 +10,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -86,6 +88,16 @@ public class MainActivity extends ActionBarActivity {
         isDrawerLocked = getResources().getBoolean(R.bool.tablet_land);
 
         setCustomFontTitleBar();
+
+        //TEST
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+//            SystemBarTintManager tintManager = new SystemBarTintManager(this);
+//            tintManager.setStatusBarTintEnabled(true);
+//
+//            int actionBarColor = Color.parseColor("#00DDDD");
+//            tintManager.setStatusBarTintColor(actionBarColor);
+//            Log.d("asd","asd");
+        }
 
         String[] mNavigationDrawerMenuTitles = getResources().getStringArray(R.array.navigation_drawer_menu_titles);
         TypedArray mNavigationDrawerMenuIcons = getResources().obtainTypedArray(R.array.navigation_drawer_icons);

@@ -23,6 +23,14 @@ public class MainFragment extends Fragment {
 //        String[] needWeights = categoryManager.getNeedWeights(getActivity(), maxWeights);
         float maxSum = maxWeights[0] + maxWeights[1] + maxWeights[2];
 
+        //Convert to lbs
+        if (Config.getYourMeasure()) {
+            maxSum = Utils.kgToLbs(maxSum);
+            maxWeights[0] = Utils.round(Utils.kgToLbs(maxWeights[0]));
+            maxWeights[1] = Utils.round(Utils.kgToLbs(maxWeights[1]));
+            maxWeights[2] = Utils.round(Utils.kgToLbs(maxWeights[2]));
+        }
+
         ((TextView) view.findViewById(R.id.bench_press_max)).setText(Float.toString(maxWeights[0]));
         ((TextView) view.findViewById(R.id.squat_max)).setText(Float.toString(maxWeights[1]));
         ((TextView) view.findViewById(R.id.deadlift_max)).setText(Float.toString(maxWeights[2]));

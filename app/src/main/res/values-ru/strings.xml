@@ -182,6 +182,7 @@
     <string name="current_category">Current category:</string>
     <string name="none_category">-</string>
     <string name="custom_font">Шрифт</string>
+    <string name="measure">Measure</string>
 
 
 </resources>

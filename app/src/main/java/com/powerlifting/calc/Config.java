@@ -36,6 +36,16 @@ public class Config {
     private static int yourFederation;
     private static boolean yourGender;
 
+    public static boolean getYourMeasure() {
+        return yourMeasure;
+    }
+
+    public static void setYourMeasure(boolean yourMeasure) {
+        Config.yourMeasure = yourMeasure;
+    }
+
+    private static boolean yourMeasure;
+
     private static Config instance;
 
     public static int getFontType() {
